@@ -5,4 +5,6 @@ import Root from './components/root'
 
 document.addEventListener('DOMContentLoaded', () => {
     ReactDOM.render(<Root/>, document.getElementById('root'))
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
 })
