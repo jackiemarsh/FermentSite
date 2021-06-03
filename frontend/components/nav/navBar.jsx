@@ -23,7 +23,7 @@ class NavBar extends React.Component {
             return (
                 <hgroup className="header-group">
                     <h2 className="header-name">Cheers, {this.props.currentUser.username}!</h2>
-                    <button className="nav-links" onClick={this.handleClick}>Log Out</button>
+                    <button className="logout-button" onClick={this.handleClick}>Log Out</button>
                     {/* <NavLink to="/" className="nav-links">Log Out</NavLink> */}
                 </hgroup>
             )
