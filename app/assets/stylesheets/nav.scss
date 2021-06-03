@@ -1,0 +1,40 @@
+.nav-bar {
+    border-bottom: 1px solid grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 40px;
+    padding: 10px;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 17%;
+    padding: 5px;
+    color: rgb(56, 59, 59);
+}
+
+.nav-links > * {
+    color: darkslategrey;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.nav-links > *:hover {
+    background: rgb(217, 230, 238);
+    color: darkslategrey;
+    padding: 5px;
+    border-radius: 5px;
+}
+.main-logo {
+    // color: orangered;
+    font-size: 30px;
+    background-color: #f5c907;
+    background-image: linear-gradient( #f3f3ea, #eed461);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+}
