@@ -10,7 +10,6 @@ import NavBar from './nav/navBar'
 const App = () => (
   <div>
       <header>
-        <h1>FermentSite is brewing...</h1>
         <GreetingContainer />
         <NavBar/>
        </header>

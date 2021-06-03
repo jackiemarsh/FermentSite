@@ -20,16 +20,15 @@
 }
 
 .login-fields {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: stretch;
-    flex-wrap: wrap;
-    height: 300px;
-    width: 100%;
+    align-items: stretch;
 }
 
 .login-input {
-
+    display: block;
+    width: 100%;
 }
 
 .session-submit {
@@ -42,8 +41,8 @@
 }
 
 .login-input, .session-submit {
-    width: 292px;
-    padding: 8px;
+    box-sizing: border-box;
+    padding: 14px 8px 2px 8px;
 }
 
 .form-intro {
