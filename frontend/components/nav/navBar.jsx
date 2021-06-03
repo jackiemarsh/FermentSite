@@ -41,9 +41,9 @@ class NavBar extends React.Component {
 
         return (
             <header className="nav-bar">
-                <h1 className="main-logo">
-                    <NavLink to="/">fermentsite</NavLink>
-                </h1>
+                
+                    <NavLink to="/" className="main-logo">fermentsite</NavLink>
+                
                 <div>
                     {this.sessionView()}
                 </div>
