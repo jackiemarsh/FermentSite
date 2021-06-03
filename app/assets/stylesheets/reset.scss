@@ -1,0 +1,72 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	font-family: "Neue plak thin";
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+@font-face {
+    font-family: "Neue Plak"; 
+	src: url("//db.onlinewebfonts.com/t/a14ee85c79dd38d7271d1e04f79a3b93.eot"); src: url("//db.onlinewebfonts.com/t/a14ee85c79dd38d7271d1e04f79a3b93.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/a14ee85c79dd38d7271d1e04f79a3b93.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/a14ee85c79dd38d7271d1e04f79a3b93.woff") format("woff"), url("//db.onlinewebfonts.com/t/a14ee85c79dd38d7271d1e04f79a3b93.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/a14ee85c79dd38d7271d1e04f79a3b93.svg#Neue Plak") format("svg"); 
+}
+// Copyright 2018 Monotype Imaging Inc. All rights reserved.
+
+// Typeface Family Name, Neue PlakLibrary, Monotype LibraryTypeface Designer, Linda Hintz, Toshi Omagari, Typeface Design Year, 2018Original Design, Paul Renner 1930Type Style Category, Sans Serif,Geometric SansNumber of Weights, 62
+
+// Plak is a trademark of Monotype Imaging Inc. and may be registered in certain other jurisdictions.
+
+// This font software is the property of Monotype Imaging Inc., or one of its affiliated entities (collectively, Monotype) and its use by you is covered under the terms of a license agreement. You have obtained this font software either directly from Monotype or together with software distributed by one of the licensees of Monotype. This software is a valuable asset of Monotype. Unless you have entered into a specific license agreement granting you additional rights, your use of this software is limited by the terms of the actual license agreement you have entered into with Monotype. You may not copy or distribute this software. If you have any questions concerning your rights you should review the license agreement you received with the software. You can learn more about Monotype here: www.monotype.com
+
+@import url(//db.onlinewebfonts.com/c/a14ee85c79dd38d7271d1e04f79a3b93?family=Neue+Plak);
+
+@font-face {
+	font-family: "Neue Plak thin"; 
+	src: url("//db.onlinewebfonts.com/t/dd72e46b877acc620c475d5ac7578980.eot"); src: url("//db.onlinewebfonts.com/t/dd72e46b877acc620c475d5ac7578980.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/dd72e46b877acc620c475d5ac7578980.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/dd72e46b877acc620c475d5ac7578980.woff") format("woff"), url("//db.onlinewebfonts.com/t/dd72e46b877acc620c475d5ac7578980.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/dd72e46b877acc620c475d5ac7578980.svg#Neue Plak") format("svg");
+}
+@import url(//db.onlinewebfonts.com/c/dd72e46b877acc620c475d5ac7578980?family=Neue+Plak);
+
+h1, h2, h3 {
+	font-family: "Neue Plak";
+}
