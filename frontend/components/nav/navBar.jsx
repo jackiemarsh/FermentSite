@@ -1,24 +1,51 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import Greeting from '../greeting/greeting'
+// import GreetingContainer from '../greeting/greeting_container'
 
 class NavBar extends React.Component {
+    constructor(props) {
+        super(props)
 
-    // display () {
-    //     current_user ? (
-    //         <Link to="/logout">Logout</Link>
-    //     ) : (
-    //         <Link to="/signup">Sign Up</Link>
-    //     )
-    // }
+        // this.state = this.props.currentUser
+        this.sessionView = this.sessionView.bind(this)
+        this.handleClick = this.handleClick.bind(this)
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        this.props.processLogout();
+      }
+
+    sessionView() {
+
+        console.log(this.props.currentUser, "this is my user")
+        if (this.props.currentUser) {
+            return (
+                <hgroup className="header-group">
+                    <h2 className="header-name">Cheers, {this.props.currentUser.username}!</h2>
+                    <button className="nav-links" onClick={this.handleClick}>Log Out</button>
+                    {/* <NavLink to="/" className="nav-links">Log Out</NavLink> */}
+                </hgroup>
+            )
+        } else {
+            return (
+            <div className="nav-links">
+                <NavLink to="/login">Login</NavLink>
+                <NavLink to="/signup">Sign Up</NavLink>
+            </div>
+            )
+        }
+    }
 
     render() {
+
         return (
             <header className="nav-bar">
-                <h1 className="main-logo">FermentSite</h1>
-                <div className="nav-links">
-                    <NavLink to="/login">Login</NavLink>
-                    <NavLink to="/signup">Sign Up</NavLink>
+                <h1 className="main-logo">
+                    <NavLink to="/">fermentsite</NavLink>
+                </h1>
+                <div>
+                    {this.sessionView()}
                 </div>
             </header>
         )
