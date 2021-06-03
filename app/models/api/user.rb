@@ -9,7 +9,7 @@ class Api::User < ApplicationRecord
     # has_many :events
 
     def self.find_by_credentials(un, pw)
-        @user = user.find_by(username: un)
+        @user = Api::User.find_by(username: un)
         if @user && @user.is_password?(pw)
             return @user
         else
@@ -23,7 +23,7 @@ class Api::User < ApplicationRecord
     end
 
     def is_password?(pw)
-        po = BCrypt::password.new(self.password_digest)
+        po = BCrypt::Password.new(self.password_digest)
         po.is_password?(pw)
     end
 

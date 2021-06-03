@@ -6,12 +6,12 @@ import LogInFormContainer from './session/login_form_container';
 import {AuthRoute} from '.././util/route_util'
 import nav_container from "./nav/nav_container";
 import NavBar from './nav/navBar'
-
+<link href="//db.onlinewebfonts.com/c/a14ee85c79dd38d7271d1e04f79a3b93?family=Neue+Plak" rel="stylesheet" type="text/css"/>
 const App = () => (
   <div>
       <header>
-        {/* <h1>FermentSite is brewing</h1> */}
-        {/* <GreetingContainer /> */}
+        <h1>FermentSite is brewing...</h1>
+        <GreetingContainer />
         <NavBar/>
        </header>
   
