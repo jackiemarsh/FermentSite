@@ -33,12 +33,35 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+  conditional() {
+    if (this.props.formType === 'login') {
+      return null
+    } else {
+      return (<div>
+        <label>Email:
+      <input type="text"
+        value={this.state.email}
+        onChange={this.update('email')}
+        className="login-input"
+      />
+    </label>
+      </div>) 
+    }
+  }
 
   render() {
+      const emailField = this.props.formType === 'signup' ?  <label>Email:
+      <input type="text"
+        value={this.state.email}
+        onChange={this.update('email')}
+        className="login-input"
+      />
+    </label> : null
+
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to BenchBnB!
+          
           <br/>
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
@@ -51,7 +74,18 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
-            <br/>
+            <div>
+              {this.conditional()}
+              {/* {emailField} */}
+        {/* <label>Email:
+            <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="login-input"
+            />
+          </label> */}
+            </div> 
+            <br />
             <label>Password:
               <input type="password"
                 value={this.state.password}

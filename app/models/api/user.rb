@@ -5,6 +5,7 @@ class Api::User < ApplicationRecord
 
     attr_reader :password
 
+    before_validation :ensure_session_token
     # has_many :events
 
     def self.find_by_credentials(un, pw)
