@@ -1,0 +1,13 @@
+.nav-bar {
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-height: 50px;
+    padding: 5px;
+}
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+}
