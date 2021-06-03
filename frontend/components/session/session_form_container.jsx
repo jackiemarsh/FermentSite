@@ -50,23 +50,26 @@ class SessionForm extends React.Component {
   }
 
   render() {
-      const emailField = this.props.formType === 'signup' ?  <label>Email:
-      <input type="text"
-        value={this.state.email}
-        onChange={this.update('email')}
-        className="login-input"
-      />
-    </label> : null
+    //   const emailField = this.props.formType === 'signup' ?  <label>Email:
+    //   <input type="text"
+    //     value={this.state.email}
+    //     onChange={this.update('email')}
+    //     className="login-input"
+    //   />
+    // </label> : null
 
+    const submitText = this.props.formType === 'signup' ? "Create a New Account" :
+    "Login"
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          
-          <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
-          <div className="login-form">
-            <br/>
+        <form onSubmit={this.handleSubmit} className="login-form">
+          <br />
+          <div className="form-intro">
+            {this.props.formType}
+            {this.renderErrors()}
+          </div>
+
+          <div className="login-fields">
             <label>Username:
               <input type="text"
                 value={this.state.username}
@@ -74,16 +77,9 @@ class SessionForm extends React.Component {
                 className="login-input"
               />
             </label>
+            <br />
             <div>
               {this.conditional()}
-              {/* {emailField} */}
-        {/* <label>Email:
-            <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              className="login-input"
-            />
-          </label> */}
             </div> 
             <br />
             <label>Password:
@@ -94,8 +90,10 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+
+            <input className="session-submit" type="submit" value={submitText} />
           </div>
+          {this.props.navLink}
         </form>
       </div>
     );
