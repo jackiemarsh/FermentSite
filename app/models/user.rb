@@ -1,4 +1,4 @@
-class Api::User < ApplicationRecord
+class User < ApplicationRecord
     validates :username, :email, presence: true, uniqueness: true
     validates :password_digest, presence: true
     validates :password, length: {minimum: 8, allow_nil: true}
@@ -9,12 +9,12 @@ class Api::User < ApplicationRecord
 
     has_many :events, 
     foreign_key: :author_id, 
-    class_name: :event
+    class_name: :Event
     
     # has_many :rsvps
 
     def self.find_by_credentials(un, pw)
-        @user = Api::User.find_by(username: un)
+        @user = User.find_by(username: un)
         if @user && @user.is_password?(pw)
             return @user
         else

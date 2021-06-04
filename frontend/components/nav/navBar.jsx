@@ -18,7 +18,7 @@ class NavBar extends React.Component {
 
     sessionView() {
 
-        console.log(this.props.currentUser, "this is my user")
+        // console.log(this.props.currentUser, "this is my user")
         if (this.props.currentUser) {
             return (
                 <hgroup className="header-group">
@@ -41,9 +41,7 @@ class NavBar extends React.Component {
 
         return (
             <header className="nav-bar">
-                
                     <NavLink to="/" className="main-logo">fermentsite</NavLink>
-                
                 <div>
                     {this.sessionView()}
                 </div>
