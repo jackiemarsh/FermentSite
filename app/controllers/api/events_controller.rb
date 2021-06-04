@@ -1,8 +1,8 @@
 class Api::EventsController < ApplicationController
-    before_action :require_login, except: [:index]
+    before_action :require_login, except: [:index, :show]
 
     def index
-        @events = Events.all 
+        @events = Event.all 
         render :index
     end
 
@@ -13,16 +13,17 @@ class Api::EventsController < ApplicationController
 
     def create
         @event = Event.new(event_params)
+        # @event.author_id = current_user.id
         if @event.save!
             render 'api/events/show'
         else
-            render json: @event.errors.full_messages, status 401
+            render json: @event.errors.full_messages, status: 401
         end
     end
 
-    def edit
+    # def edit
 
-    end
+    # end
 
     def destroy
         @event = Event.find_by(params[:id])
@@ -36,6 +37,6 @@ class Api::EventsController < ApplicationController
 
     private
     def event_params
-        params.require(:event).permit(:title, :description, :location, :start_date)
+        params.require(:event).permit(:title, :description, :location, :start_date, :author_id)
     end
 end

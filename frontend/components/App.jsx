@@ -6,7 +6,7 @@ import LogInFormContainer from './session/login_form_container';
 import {AuthRoute, ProtectedRoute} from '.././util/route_util'
 import NavBarContainer from './nav/nav_container'
 import UserProfile from './users/user_profile'
-
+import EventIndexContainer from './events/events_index_container'
 
 <link href="//db.onlinewebfonts.com/c/a14ee85c79dd38d7271d1e04f79a3b93?family=Neue+Plak" rel="stylesheet" type="text/css"/>
 
@@ -19,6 +19,7 @@ const App = () => (
   <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
+      <AuthRoute exact path="/" component={EventIndexContainer} />
       <ProtectedRoute exact path="/users/:userId" component={UserProfile}/>
   </Switch>
   </div>
