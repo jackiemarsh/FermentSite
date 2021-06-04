@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_01_225110) do
+ActiveRecord::Schema.define(version: 2021_06_04_000957) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,19 @@ ActiveRecord::Schema.define(version: 2021_06_01_225110) do
     t.index ["email"], name: "index_api_users_on_email", unique: true
     t.index ["session_token"], name: "index_api_users_on_session_token", unique: true
     t.index ["username"], name: "index_api_users_on_username", unique: true
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.integer "author_id", null: false
+    t.string "title", null: false
+    t.string "description", null: false
+    t.string "location", null: false
+    t.datetime "start_date", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_events_on_author_id"
+    t.index ["start_date"], name: "index_events_on_start_date"
+    t.index ["title"], name: "index_events_on_title"
   end
 
 end

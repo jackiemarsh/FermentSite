@@ -6,7 +6,12 @@ class Api::User < ApplicationRecord
     attr_reader :password
 
     before_validation :ensure_session_token
-    # has_many :events
+
+    has_many :events, 
+    foreign_key: :author_id, 
+    class_name: :event
+    
+    # has_many :rsvps
 
     def self.find_by_credentials(un, pw)
         @user = Api::User.find_by(username: un)
