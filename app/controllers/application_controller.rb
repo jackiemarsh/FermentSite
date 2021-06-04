@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
-    protect_from_forgery with: :null_session
+    # protect_from_forgery with: :null_session
+    skip_before_action :verify_authenticity_token
 
     helper_method :current_user, :logged_in?
 
@@ -29,5 +30,9 @@ class ApplicationController < ActionController::Base
             render json: ["You're not signed in!"], status: 401
         end
     end
+
+    # def require_logout
+
+    # end
 
 end
