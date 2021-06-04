@@ -5,7 +5,7 @@ import SignUpFormContainer from './session/signup_form_container.jsx';
 import LogInFormContainer from './session/login_form_container';
 import {AuthRoute, ProtectedRoute} from '.././util/route_util'
 import NavBarContainer from './nav/nav_container'
-import UserProfile from './session/users/user_profile'
+import UserProfile from './users/user_profile'
 
 
 <link href="//db.onlinewebfonts.com/c/a14ee85c79dd38d7271d1e04f79a3b93?family=Neue+Plak" rel="stylesheet" type="text/css"/>
