@@ -1,11 +1,59 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.hero-img {
-    width: 500px;
-    height: auto;
+.event-show {
+    margin: 20px;
 }
 
 .index-header {
-    
+    display: flex;
+    // flex-direction: column;
+    justify-content: center;
+    // grid-template-columns: auto 400px;
+    margin: 20px;
+    height: 230px;
+    position: relative;
 }
+
+.index-header-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.index-header-top {
+    z-index: 2;
+    color: var(--main-orange);
+    font-size: 24px;
+}
+
+.event-create-link {
+    z-index: 2;
+    font-size: 36px;
+}
+
+.index-header-img {
+    width: 400px;
+    height: auto;
+    z-index: 1;
+    align-self: flex-end;
+}
+
+.index-header-bgbox {
+    position: absolute;
+    height: 220px;
+    background-color: #f6f7fd;
+    width: 800px;
+    z-index: 0;
+}
+
+.event-feed-title {
+    font-size: 24px;
+}
+
+.event-feed {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding: 10px;
+}
+

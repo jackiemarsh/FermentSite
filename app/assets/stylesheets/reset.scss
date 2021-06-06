@@ -23,6 +23,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 	font-family: "Neue plak thin";
+	letter-spacing: 1px;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -69,4 +70,8 @@ table {
 
 h1, h2, h3 {
 	font-family: "Neue Plak";
+}
+
+:root {
+	--main-orange: rgb(240, 75, 15);
 }

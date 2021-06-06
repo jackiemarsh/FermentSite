@@ -23,17 +23,21 @@ class EventIndex extends React.Component {
             
         return (
           <div className="event-show">
-              <h1>Events</h1>
               <div className="index-header">
-                <h4 className="index-header-top">Drink life to the last drop</h4>
-                <h2 className="index-header-bottom">Beer events near you</h2>
-                <img src={mainLogo} alt="beer wall image" className="hero-img"/>
+                  <div className="index-header-content"> 
+                    <h3 className="index-header-top">Drink life to the last drop</h3>
+                    <h1 className="event-create-link">Make plans</h1>
+                  </div>
+                <div className="index-header-bgbox"></div>
+                <img src={mainLogo} alt="beer cheers image" className="index-header-img"/>
               </div>
-              <ul>
-                {this.props.events.map(event => (
-                  <EventIndexItem key={event.id} event={event} />
-                ))}
-              </ul>
+
+                <h2 className="event-feed-title">Beer events near you</h2>
+                <ul className="event-feed">
+                    {this.props.events.map(event => (
+                    <EventIndexItem key={event.id} event={event} />
+                    ))}
+                </ul>
           </div>
         );
     }

@@ -13,7 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    width: 120px;
+    width: 121px;
     padding: 5px;
     color: rgb(56, 59, 59);
 }
@@ -49,7 +49,7 @@
 
 .main-logo {
     font-size: 30px;
-    color: rgb(218, 60, 3);
+    color: var(--main-orange);
     font-family: "Neue plak";
     text-decoration: none;
     // background-image: linear-gradient( #f3f3ea, #eed461);
