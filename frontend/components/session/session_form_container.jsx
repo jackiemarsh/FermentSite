@@ -34,12 +34,21 @@ class SessionForm extends React.Component {
       </ul>
     );
   }
+
+  heading() {
+    if (this.props.formType === 'login') {
+      return (<h1>Log in</h1>)
+    } else {
+      return (<h1>Create an account</h1>)
+    }
+  }
+
   conditional() {
     if (this.props.formType === 'login') {
       return null
     } else {
       return (<div>
-        <label>Email:
+        <label>Email
       <input type="text"
         value={this.state.email}
         onChange={this.update('email')}
@@ -59,38 +68,41 @@ class SessionForm extends React.Component {
     //   />
     // </label> : null
 
-    const submitText = this.props.formType === 'signup' ? "Create a New Account" :
-    "Login"
+    const submitText = this.props.formType === 'signup' ? "Create account" :
+    "Log in"
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form">
-          <br />
+
           <div className="form-intro">
-            {this.props.formType}
+            {this.heading()}
             {this.renderErrors()}
           </div>
 
           <div className="login-fields">
-            <label>Username:
-              <input type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="login-input"
-              />
-            </label>
-            <br />
-            <div>
-              {this.conditional()}
-            </div> 
-            <br />
-            <label>Password:
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="login-input"
-              />
-            </label>
-            <br/>
+            <div className="login-container">
+              <label>Username
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input"
+                />
+              </label>
+            </div>
+            <div className="login-container">
+              <div>
+                {this.conditional()}
+              </div> 
+            </div>
+            <div className="login-container">
+              <label>Password
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                />
+              </label>
+            </div>
 
             <input className="session-submit" type="submit" value={submitText} />
           </div>
