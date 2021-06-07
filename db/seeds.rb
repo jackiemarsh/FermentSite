@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri';
-User.delete_all
-Event.delete_all
+User.destroy_all
+Event.destroy_all
 # rsvp.delete_all
 
 user1 = User.create(username: "ilovefedoras", password: 12345678, email: "garrettoliver@gmail.com")
@@ -22,3 +22,4 @@ event2 = Event.create!(title: "Homebrew Competition", description: "Put your hom
 event3 = Event.create!(title: "Barleywine Fest", description: "Sample the largest selection of this unique and niche style, and cast your vote on which one is your favorite", location: "San Francisco", start_date: Date.parse("14 Jul 2021"), author_id: user1.id)
 
 event1.image.attach(io: open("https://fermentsite-seeds.s3-us-west-1.amazonaws.com/beer-bread-gingham.jpg"), filename:'beer-bread-gingham.jpg')
+event2.image.attach(io: open("https://fermentsite-seeds.s3-us-west-1.amazonaws.com/beer-sign.jpg"), filename:'beer-sign.jpg')

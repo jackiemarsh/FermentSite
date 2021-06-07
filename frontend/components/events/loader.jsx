@@ -1,7 +1,7 @@
 import React from 'react';
 
 const LoadingIcon = () => (
-  <div id="loader"></div>
+  <div className="loader"></div>
 );
 
 export default LoadingIcon;

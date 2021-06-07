@@ -24,3 +24,4 @@ class EventIndexItem extends React.Component{
 }
 
 export default EventIndexItem;
+
