@@ -7,7 +7,7 @@ class Api::EventsController < ApplicationController
     end
 
     def show
-        @event = Event.find_by(params[:id])
+        @event = Event.find(params[:id])
         render :show
     end
 
@@ -37,6 +37,6 @@ class Api::EventsController < ApplicationController
 
     private
     def event_params
-        params.require(:event).permit(:title, :description, :location, :start_date, :author_id)
+        params.require(:event).permit(:title, :description, :location, :start_date, :author_id, :image)
     end
 end

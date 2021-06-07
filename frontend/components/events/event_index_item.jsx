@@ -10,14 +10,13 @@ class EventIndexItem extends React.Component{
   render() {
 
     return(
-      <li className="event-item">
-        <Link to={`/events/${this.props.event.id}`}>
-          <span>{this.props.event.id}</span>
-          <span>{this.props.event.title}</span>
-          <img src={this.props.event.imageUrl}/>
-          <span>{this.props.event.description}</span>
-          <span>{this.props.event.location}</span>
-          <span>{this.props.event.start_date}</span>
+      <li>
+        <Link className="event-item" to={`/events/${this.props.event.id}`}>
+          <img src={this.props.event.imageUrl} className="event-item-image"/>
+          <span className="event-item-title">{this.props.event.title}</span>
+          <span className="event-item-description">{this.props.event.description}</span>
+          <span className="event-item-location">{this.props.event.location}</span>
+          <span className="event-item-date">{this.props.event.start_date}</span>
         </Link>
       </li>
     )
