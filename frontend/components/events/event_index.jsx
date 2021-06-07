@@ -47,6 +47,7 @@ class EventIndex extends React.Component {
                     {/* if ({this.props.events[this.props.events.length-1]}) {
                         <LoadingIcon/>
                     }  */}
+                    <LoadingIcon/>
                     {this.props.events.map(event => (
                     <EventIndexItem key={event.id} event={event} />
                     ))}
