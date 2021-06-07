@@ -22,7 +22,7 @@ class EventIndex extends React.Component {
     }
 
     render() {
-            
+        // this.props.events[this.props.events.length-1] ? <LoadingIcon/> :
         return (
           <div className="event-show">
               <div className="index-header">
@@ -44,10 +44,6 @@ class EventIndex extends React.Component {
 
                 <h2 className="event-feed-title">Beer events near you</h2>
                 <ul className="event-feed">
-                    {/* if ({this.props.events[this.props.events.length-1]}) {
-                        <LoadingIcon/>
-                    }  */}
-                    <LoadingIcon/>
                     {this.props.events.map(event => (
                     <EventIndexItem key={event.id} event={event} />
                     ))}
