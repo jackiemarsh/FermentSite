@@ -22,7 +22,9 @@ class EventIndex extends React.Component {
     }
 
     render() {
-        // this.props.events[this.props.events.length-1] ? <LoadingIcon/> :
+        if (!this.props.events[this.props.events.length-1]) {
+          return (<LoadingIcon/>)
+        } else {
         return (
           <div className="event-show">
               <div className="index-header">
@@ -50,6 +52,7 @@ class EventIndex extends React.Component {
                 </ul>
           </div>
         );
+        }
     }
 }
 
