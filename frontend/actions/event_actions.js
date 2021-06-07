@@ -3,6 +3,8 @@ import * as EventApiUtil from '../util/event_api_util';
 export const RECEIVE_EVENTS = 'RECEIVE_EVENTS';
 export const RECEIVE_EVENT = 'RECEIVE_EVENT';
 export const REMOVE_EVENT = 'REMOVE_EVENT';
+export const START_LOADING_EVENTS = 'START_LOADING_EVENTS';
+export const START_LOADING_EVENT = 'START_LOADING_EVENT';
 // export const RECEIVE_EVENT_ERRORS = 'RECEIVE_EVENT_ERRORS';
 // export const CLEAR_EVENT_ERRORS = 'CLEAR_EVENT_ERRORS';
 
@@ -29,6 +31,15 @@ const removeEvent = (eventId) => ({
 // export const clearEventErrors = () => ({
 //     type: CLEAR_EVENT_ERRORS
 // });
+
+export const startLoadingEvents = () => ({
+    type: START_LOADING_EVENTS
+  });
+  
+
+export const startLoadingEvent = () => ({
+type: START_LOADING_EVENT
+});
 
 export const fetchEvents = () => dispatch => (
     EventApiUtil.fetchEvents()

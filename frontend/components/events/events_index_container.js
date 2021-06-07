@@ -3,6 +3,7 @@ import { fetchEvents, fetchEvent } from '../../actions/event_actions';
 import EventIndex from './event_index';
 import { withRouter } from 'react-router-dom';
 
+
 const mSTP = (state) => ({
     events: Object.values(state.entities.events),
     currentUser: state.session
