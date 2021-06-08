@@ -4,6 +4,7 @@
     align-items: flex-end;
     min-height: 40px;
     padding: 20px;
+    box-sizing: border-box;
 }
 .nav-bar:hover {
     border-bottom: 1px solid grey;
