@@ -7,5 +7,10 @@ class Event < ApplicationRecord
 
     has_one_attached :image
     
+    has_many :event_rsvps
+
+    has_many :attendees,
+        through: :event_rsvps,
+        source: :user
 
 end

@@ -6,7 +6,7 @@ import {fetchEvent, fetchEvents, deleteEvent} from '../../actions/event_actions'
 const mSTP = (state, ownProps) => ({
     events: Object.values(state.entities.events),
     event: state.entities.events[ownProps.match.params.eventId],
-    currentUser: state.session,
+    currentUser: state.session
 })
 
 const mDTP = (dispatch) => ({

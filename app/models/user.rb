@@ -8,10 +8,14 @@ class User < ApplicationRecord
     before_validation :ensure_session_token
 
     has_many :events, 
-    foreign_key: :author_id, 
-    class_name: :Event
+        foreign_key: :author_id, 
+        class_name: :Event
     
-    # has_many :rsvps
+    has_many :event_rsvps
+
+    has_many :rsvps,
+        through: :event_rsvps,
+        source: :event
 
     def self.find_by_credentials(un, pw)
         @user = User.find_by(username: un)

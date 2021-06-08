@@ -19,9 +19,9 @@ class EventShow extends React.Component {
     render() {
         if (this.state.loading) return null;
         if (this.props.event === undefined) return null;
-
+        // console.log(this.props.event.start_date.toLocaleDateString('en-US', {month: 'long', day: 'numeric'}))
         return (
-            <div>Test Show
+            <div className="event-show-container">Test Show
                 <section className="event-show">
                     <div className="event-show-top">
                         <figure>
@@ -30,13 +30,14 @@ class EventShow extends React.Component {
                         <div className="top-side">
                             <h4 className="event-show-date">{this.props.event.start_date}</h4>
                             <h2 className="event-show-title">{this.props.event.title}</h2>
-                            <h3 className="event-show-author">by {this.props.event.author_id}</h3>
+                            <h3 className="event-show-author">by {this.props.event.author}</h3>
                         </div>
                     </div>
                     <div className="event-show-bottom">
                         <h2 className="event-show-title">{this.props.event.title}</h2>
                         <h1 className="event-show-header">About this event</h1>
                         <h4 className="event-show-description">{this.props.event.description}</h4>
+                        <div className="bottom-sidebar">{this.props.event.location}</div>
                     </div>
                 </section>
             </div>
