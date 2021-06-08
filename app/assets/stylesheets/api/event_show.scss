@@ -1,0 +1,18 @@
+.event-show-top {
+    display: grid;
+    box-sizing: border-box;
+    grid-template-columns: 3fr 2fr;
+    border: 20px solid rgba(95, 23, 68, 0.349);
+}
+
+.event-show-img {
+    width: 100%;
+}
+
+.top-side {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgba(245, 243, 243, 0.89);
+}
