@@ -26,7 +26,7 @@ class EventIndex extends React.Component {
           return (<LoadingIcon/>)
         } else {
         return (
-          <div className="event-show">
+          <div className="event-page">
               <div className="index-header">
                 <div className="index-header-bgbox"></div>
                 <div className="index-header-main">
@@ -44,12 +44,14 @@ class EventIndex extends React.Component {
                 </div>
               </div>
 
+              <div className="index-header-bottom">
                 <h2 className="event-feed-title">Beer events near you</h2>
                 <ul className="event-feed">
                     {this.props.events.map(event => (
                     <EventIndexItem key={event.id} event={event} />
                     ))}
                 </ul>
+              </div>
           </div>
         );
         }

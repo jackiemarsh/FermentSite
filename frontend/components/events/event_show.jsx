@@ -30,7 +30,7 @@ class EventShow extends React.Component {
                         <div className="top-side">
                             <h4 className="event-show-date">{this.props.event.start_date}</h4>
                             <h2 className="event-show-title">{this.props.event.title}</h2>
-                            <h3 className="event-show-author">by {this.props.author_id}</h3>
+                            <h3 className="event-show-author">by {this.props.event.author_id}</h3>
                         </div>
                     </div>
                     <div className="event-show-bottom">
