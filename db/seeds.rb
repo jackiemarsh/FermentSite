@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri';
-User.destroy_all
-Event.destroy_all
+User.delete_all
+Event.delete_all
 # rsvp.delete_all
 
 user1 = User.create(username: "ilovefedoras", password: 12345678, email: "garrettoliver@gmail.com")

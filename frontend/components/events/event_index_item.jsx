@@ -10,7 +10,7 @@ class EventIndexItem extends React.Component{
   render() {
 
     return(
-      <li>
+      <li className="list-item">
         <Link className="event-item" to={`/events/${this.props.event.id}`}>
           <img src={this.props.event.imageUrl} className="event-item-image"/>
           <span className="event-item-title">{this.props.event.title}</span>
