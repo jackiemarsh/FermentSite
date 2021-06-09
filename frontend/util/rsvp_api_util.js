@@ -1,8 +1,15 @@
+export const fetchEventRSVPS = () => (
+    $.ajax({
+        method: 'GET',
+        url: `/api/event_rsvps`
+    })
+)
+
 export const createEventRsvp = (event_rsvp) => (
     $.ajax({
         method: 'POST',
         url: `/api/event_rsvps`,
-        data: {event_rsvp}
+        data: { event_rsvp }
     })
 )
 
