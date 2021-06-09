@@ -1,13 +1,18 @@
 class Api::EventRsvpsController < ApplicationController
 
     def create
-        @event_rsvp = EventRsvps.new(rsvp_params)
+        @event_rsvp = EventRsvp.new(rsvp_params)
         @event_rsvp.user_id = current_user.id
         if @event_rsvp.save 
-            render 'api/events/show'
+            render :show
         else
             render json: @event_rsvp.errors.full_messages, status: 401
         end
+    end
+
+    def index 
+        @event_rsvps = current_user.rsvps
+        render :index
     end
 
     def destroy
