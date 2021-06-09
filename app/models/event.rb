@@ -7,7 +7,9 @@ class Event < ApplicationRecord
 
     has_one_attached :image
     
-    has_many :event_rsvps
+    has_many :event_rsvps, 
+        foreign_key: :event_id,
+        class_name: :EventRsvp
 
     has_many :attendees,
         through: :event_rsvps,

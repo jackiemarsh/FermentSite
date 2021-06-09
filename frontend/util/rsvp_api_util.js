@@ -1,4 +1,4 @@
-export const fetchEventRSVPS = () => (
+export const fetchEventRsvps = () => (
     $.ajax({
         method: 'GET',
         url: `/api/event_rsvps`

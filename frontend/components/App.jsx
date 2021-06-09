@@ -5,7 +5,7 @@ import SignUpFormContainer from './session/signup_form_container.jsx';
 import LogInFormContainer from './session/login_form_container';
 import {AuthRoute, ProtectedRoute} from '.././util/route_util'
 import NavBarContainer from './nav/nav_container'
-import UserProfile from './users/user_profile'
+import UserProfileContainer from './users/user_profile_container'
 import EventIndexContainer from './events/events_index_container'
 import EventShowContainer from './events/event_show_container'
 
@@ -21,8 +21,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />
       <Route path="/events/:eventId" component={EventShowContainer} />
-      <ProtectedRoute exact path="/users/:userId" component={UserProfile}/>
-      <AuthRoute exact path="/" component={EventIndexContainer} />
+      <ProtectedRoute exact path="/users/:userId" component={UserProfileContainer}/>
+      <Route exact path="/" component={EventIndexContainer} />
   </Switch>
   </div>
 );
