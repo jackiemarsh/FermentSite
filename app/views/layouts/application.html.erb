@@ -17,14 +17,16 @@
     }
     </script>
   <%end%>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  
+    <%= favicon_link_tag 'temp-favicon-3.png' %> 
   </head>
 
   <script>
     window.mainLogo = "<%= image_url('beers-cheers-cocktails.jpg')%>"
   </script>
  
-  <%= favicon_link_tag 'temp-favicon-3.png' %> 
   <body>
     <%= yield %>
   </body>

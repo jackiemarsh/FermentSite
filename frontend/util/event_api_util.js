@@ -16,7 +16,7 @@ export const fetchEvents = () => (
   export const createEvent = (event) => (
     $.ajax({
         method: `POST`,
-        url: `/api/events/${event}`,
+        url: `/api/events`,
         data: { event }
     })
 );
