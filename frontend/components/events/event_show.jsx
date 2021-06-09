@@ -43,6 +43,9 @@ class EventShow extends React.Component {
                             <h3 className="event-show-author">by {this.props.event.author}</h3>
                         </div>
                     </div>
+                    <div className="event-show-mid">
+                        <button onClick={this.RsvpEvent} className="rsvp-button">RSVP</button>
+                    </div>
                     <div className="event-show-bottom">
                        <div className="bottom-left">
                             <h2 className="event-show-title">{this.props.event.title}</h2>
@@ -52,7 +55,6 @@ class EventShow extends React.Component {
                         <div className="bottom-right">Location {this.props.event.location}</div>
                     </div>
                 </section>
-                <button onClick={this.RsvpEvent}>RSVP</button>
             </div>
         )
     }
