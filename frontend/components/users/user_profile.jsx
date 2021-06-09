@@ -1,5 +1,5 @@
 import React from 'react'
-
+import EventIndexItem from '../events/event_index_item';
     class UserProfile extends React.Component {
         constructor(props) {
             super(props)
@@ -31,9 +31,9 @@ import React from 'react'
                 <div className="events-attending">
                     <h2>Events coming up</h2>
                     <ul>
-                        {/* {this.props.eventRsvps.map(event => (
-
-                        ))} */}
+                        {this.props.eventRsvps.map(event => (
+                            <EventIndexItem key={event.id} event={event} />
+                        ))}
                     </ul>
                 </div>
             </div>

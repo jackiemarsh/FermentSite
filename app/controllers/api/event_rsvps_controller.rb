@@ -11,7 +11,7 @@ class Api::EventRsvpsController < ApplicationController
     end
 
     def index 
-        @event_rsvps = current_user.rsvps
+        @event_rsvps = current_user.event_rsvps
         render :index
     end
 

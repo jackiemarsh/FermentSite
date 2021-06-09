@@ -13,7 +13,9 @@ class User < ApplicationRecord
         foreign_key: :author_id, 
         class_name: :Event
     
-    has_many :event_rsvps
+    has_many :event_rsvps,
+        foreign_key: :user_id,
+        class_name: :EventRsvp
 
     has_many :rsvps,
         through: :event_rsvps,
