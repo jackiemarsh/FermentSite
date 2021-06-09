@@ -21,9 +21,14 @@ class Api::EventsController < ApplicationController
         end
     end
 
-    # def edit
-
-    # end
+    def update
+        @event = current_user.events.find(params[:id])
+        if @event.update(event_params)
+          render :show
+        else
+          render json: @event.errors.messages, status: 422
+        end
+    end
 
     def destroy
         @event = Event.find(params[:id])

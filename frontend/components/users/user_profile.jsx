@@ -15,7 +15,7 @@ import CreateEventFormContainer from '../events/create_event_container'
         if (this.props.currentUser === undefined) return null;
 
         return(
-            <div>
+            <div className="profile-container">
                 <h1 className="page-header">Account Information</h1>
                 <div className="account-info">
                     <div className="user-email">

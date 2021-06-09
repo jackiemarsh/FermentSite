@@ -33,13 +33,13 @@ class CreateEventForm extends React.Component {
                             onChange={this.update('title')}
                             />
                         </label>
-                        {/* <span className="form-field-error">{this.checkError("Title can't be blank")}</span> */}
+                        
                         <label className="event-date">Date
                             <input type="date"
                             value={this.state.start_date}
                             onChange={this.update('start_date')}/>
                         </label>
-                        {/* <span className="form-field-error">{this.checkError("Start date can't be blank")}</span> */}
+                       
                         <label className="event-location">Location
                             <input type="text"
                             value={this.state.location}
@@ -50,7 +50,7 @@ class CreateEventForm extends React.Component {
                             onChange={this.update('description')}
                             />
                         </label>
-                        {/* <span className="form-field-error">{this.checkError("Category can't be blank")}</span> */}
+                        
                     </div>
                     <input className="button-submit" type="submit" value="Save" />
                 </form>
