@@ -1,5 +1,7 @@
 import React from 'react'
 import EventIndexItem from '../events/event_index_item';
+import CreateEventFormContainer from '../events/create_event_container'
+
     class UserProfile extends React.Component {
         constructor(props) {
             super(props)
@@ -26,6 +28,10 @@ import EventIndexItem from '../events/event_index_item';
                             {/* <img src={this.props.event.imageUrl} alt="event pic" className="event-show-img"/> */}
                         </figure>
                     </div>
+                </div>
+
+                <div>
+                    <CreateEventFormContainer />
                 </div>
 
                 <div className="events-attending">
