@@ -69,24 +69,24 @@ input:focus {
     text-decoration: none;
 }
 
-.session-submit {
+.button-submit {
     background: var(--main-orange);
     color: whitesmoke;
     border-radius: 5px;
     padding: 14px;
 }
 
-.session-submit:hover {
+.button-submit:hover {
     background: rgb(240, 105, 15);
     cursor: pointer;
 }
 
-.session-submit:active {
+.button-submit:active {
     background: rgb(223, 71, 16);
     box-shadow: 1px 1px 1px 1px rgb(189, 99, 66);
 }
 
-.login-input, .session-submit {
+.login-input, .button-submit {
     box-sizing: border-box;
 }
 
