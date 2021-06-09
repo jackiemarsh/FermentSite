@@ -8,6 +8,7 @@ const mSTP = (state) => ({
         title: "",
         description: "",
         start_date: "",
+        location: "",
         author_id: state.entities.users[state.session.id]["id"]
     },
     currentUser: state.entities.users[state.session.id]
