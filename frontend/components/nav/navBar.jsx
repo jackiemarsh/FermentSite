@@ -22,7 +22,7 @@ class NavBar extends React.Component {
         if (this.props.currentUser) {
             return (
                 <hgroup className="header-group">
-                    <h2 className="header-name">Cheers, {this.props.currentUser.username}!</h2>
+                    <NavLink to="/users/:userId" className="header-name">Cheers, {this.props.currentUser.username}!</NavLink>
                     <button className="logout-button" onClick={this.handleClick}>Log Out</button>
                     {/* <NavLink to="/" className="nav-links">Log Out</NavLink> */}
                 </hgroup>

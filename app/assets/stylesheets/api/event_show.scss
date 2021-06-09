@@ -57,6 +57,16 @@
     color: white;
 }
 
+.rsvp-button:hover {
+    background-color: rgb(97, 179, 97);
+    cursor: pointer;
+}
+
+.rsvp-button:active {
+    background-color: rgb(31, 92, 31);
+    box-shadow: 1px 1px 1px 1px rgb(96, 226, 96);
+}
+
 .event-show-bottom {
     display: flex;
     // flex-direction: column;
