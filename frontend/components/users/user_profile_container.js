@@ -7,7 +7,7 @@ import { withRouter } from 'react-router-dom';
 const mSTP = (state) => ({
     events: Object.values(state.entities.events),
     eventRsvps: Object.values(state.entities.eventRSVPS),
-    currentUser: state.session.id
+    currentUser: Object.values(state.entities.users)
 });
 
 const mDTP = (dispatch) => ({

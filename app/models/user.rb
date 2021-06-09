@@ -7,6 +7,8 @@ class User < ApplicationRecord
 
     before_validation :ensure_session_token
 
+    # has_one_attached :image
+
     has_many :events, 
         foreign_key: :author_id, 
         class_name: :Event
