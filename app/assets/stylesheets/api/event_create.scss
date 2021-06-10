@@ -1,0 +1,33 @@
+.event-form-container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 400px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-header {
+    font-size: 36px;
+    align-self: flex-start;
+}
+.event-form {
+    padding: 40px;
+}
+
+.basic-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.basic-info > * {
+    padding: 10px;
+}
+
+.create-input {
+    display: block;
+    width: 100%;
+    border: none;
+}
