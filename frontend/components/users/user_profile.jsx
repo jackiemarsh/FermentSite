@@ -2,13 +2,29 @@ import React from 'react'
 import EventIndexItem from '../events/event_index_item';
 import CreateEventFormContainer from '../events/create_event_container'
 
-    class UserProfile extends React.Component {
+class UserProfile extends React.Component {
         constructor(props) {
             super(props)
-
+        this.filterEvents = this.filterEvents.bind(this)
         }
+
     componentDidMount() {
         this.props.fetchEventRsvps()
+        this.props.fetchEvents()
+    }
+  
+    filterEvents() {
+        if (this.props.events != undefined) {
+            let userEvents = this.props.events;
+            console.log(userEvents)
+            return userEvents.map(event => {
+                if (event.author_id === parseInt(this.props.currentUser.id)) {
+                    // console.log("author:" +event.author_id)
+                    // console.log("user:" +currentUser.id)
+                    return <EventIndexItem key={event.id} event={event}/>;
+                }
+            })
+        }
     }
 
     render() {
@@ -36,10 +52,20 @@ import CreateEventFormContainer from '../events/create_event_container'
 
                 <div className="events-attending">
                     <h2>Events coming up</h2>
-                    <ul>
+                    <ul className="event-feed">
                         {this.props.eventRsvps.map(event => (
                             <EventIndexItem key={event.id} event={event} />
                         ))}
+                    </ul>
+                </div>
+                <div className="events-created">
+                    <h2>Manage Your Events</h2>
+                    <ul className="">
+                       {/* {userEvents.map(event => {
+                           <EventIndexItem key={event.id} event={event}/>
+                       })} */}
+                      
+                       {this.filterEvents()}
                     </ul>
                 </div>
             </div>

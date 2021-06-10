@@ -31,6 +31,7 @@
     border: none;
     background-color: transparent;  
     width: fit-content;
+    margin-top: 3px;
 }
 
 .nav-links > *:hover {
@@ -46,6 +47,7 @@
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 3px;
 }
 
 .main-logo {
@@ -70,8 +72,20 @@
 
 .header-name {
     font-family: "Neue plak";
-    padding-bottom: 8px;
+    padding: 5px 5px 8px 5px;
     text-decoration: none;
     color: rgb(31, 30, 30);
     font-size: 24px;
+}
+
+.header-name:hover {
+    background: rgb(217, 230, 238);
+    color: darkslategrey;
+    padding: 5px 5px 8px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header-name:active {
+
 }

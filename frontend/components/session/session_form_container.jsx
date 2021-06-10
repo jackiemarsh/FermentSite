@@ -8,8 +8,20 @@ class SessionForm extends React.Component {
       password: '',
       email: ''
     };
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
+    this.renderHandleFile = this.renderHandleFile.bind(this)
+    this.demoSubmit = this.demoSubmit.bind(this)
+    this.demoUser = {
+      username: "demo_drinker123",
+      email: "demo@fermentsite.com"
+    }
   }
+
+  demoSubmit() {
+    this.handleLogin(this.demoUser)
+  }
+
 
   update(field) {
     return e => this.setState({
@@ -17,10 +29,49 @@ class SessionForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleSignUp(e) {
+    e.preventDefault();
+    // const user = Object.assign({}, this.state);
+    const formData = new FormData();
+    formData.append("user[username]", this.state.username)
+    formData.append("user[password]", this.state.password)
+    formData.append("user[email]", this.state.email)
+    if (this.state.image && this.formType === 'signup') {
+      formData.append("user[image]", this.state.image);
+  }
+    this.props.processForm(formData);
+  }
+
+  handleLogin(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    this.props.processForm(user)
+  }
+
+  handleFile(e){
+    const file = e.currentTarget.files[0];
+    const filereader = new FileReader();
+    filereader.onloadend = () => {
+        this.setState({image: file, imageUrl: filereader.result});
+    };
+    if (file){
+        filereader.readAsDataURL(file);
+    }
+  }
+
+  renderHandleFile() {
+    if (this.props.formType === 'signup') {
+      return (
+      <div className="login-pic">
+          <label className="event-image">Upload an image
+              <input type="file"
+              onChange={this.handleFile.bind(this)}/>
+          </label>
+      </div>
+      );
+    } else {
+      return null
+    }
   }
 
   renderErrors() {
@@ -72,11 +123,17 @@ class SessionForm extends React.Component {
     //   />
     // </label> : null
 
+    const demoButton = this.props.formType === 'signup' ? <div>Don't want to sign up?
+      <button onClick={this.demoSubmit} className="demo-submit">Demo Login</button>
+    </div>
+   : null
     const submitText = this.props.formType === 'signup' ? "Create account" :
     "Log in"
+    const handleForm = this.props.formType === 'signup' ? this.handleSignUp : this.handleLogin
+    
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form">
+        <form onSubmit={handleForm} className="login-form">
 
           <div className="form-intro">
             {this.heading()}
@@ -103,8 +160,16 @@ class SessionForm extends React.Component {
                 />
               </label>
             </div>
-
+            <div>{this.renderHandleFile()}</div> 
+              
+            {/* <div className="login-pic">
+              <label className="event-image">Upload an image
+                  <input type="file"
+                  onChange={this.handleFile.bind(this)}/>
+                </label>
+            </div> */}
             <input className="button-submit" type="submit" value={submitText} />
+            <div>{demoButton}</div> 
           </div>
           {this.props.navLink}
         </form>
