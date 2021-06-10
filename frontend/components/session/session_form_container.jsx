@@ -10,16 +10,22 @@ class SessionForm extends React.Component {
     };
     this.handleSignUp = this.handleSignUp.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
-    this.renderHandleFile = this.renderHandleFile.bind(this)
-    this.demoSubmit = this.demoSubmit.bind(this)
+    this.renderHandleFile = this.renderHandleFile.bind(this);
+    this.demoSubmit = this.demoSubmit.bind(this);
+    
     this.demoUser = {
       username: "demo_drinker123",
+      password: 12345678,
       email: "demo@fermentsite.com"
     }
   }
 
-  demoSubmit() {
-    this.handleLogin(this.demoUser)
+  demoSubmit(e) {
+    this.props.login({
+      username: "demo_drinker123",
+      password: 12345678,
+      email: "demo@fermentsite.com"
+    })
   }
 
 
@@ -27,6 +33,10 @@ class SessionForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  componentDidMount() {
+    this.props.resetSessionErrors()
   }
 
   handleSignUp(e) {
@@ -39,13 +49,13 @@ class SessionForm extends React.Component {
     if (this.state.image && this.formType === 'signup') {
       formData.append("user[image]", this.state.image);
   }
-    this.props.processForm(formData);
+    this.props.signup(formData);
   }
 
   handleLogin(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user)
+    this.props.login(user)
   }
 
   handleFile(e){
@@ -127,6 +137,7 @@ class SessionForm extends React.Component {
       <button onClick={this.demoSubmit} className="demo-submit">Demo Login</button>
     </div>
    : null
+
     const submitText = this.props.formType === 'signup' ? "Create account" :
     "Log in"
     const handleForm = this.props.formType === 'signup' ? this.handleSignUp : this.handleLogin

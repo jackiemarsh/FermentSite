@@ -14,10 +14,10 @@ import CreateEventContainer from './events/create_event_container'
 
 const App = () => (
   <div>
-      <header>
-        {/* <GreetingContainer /> */}
+      {/* <header>
+        <GreetingContainer />
+       </header> */}
         <NavBarContainer />
-       </header>
   <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />
       <AuthRoute exact path="/signup" component={SignUpFormContainer} />

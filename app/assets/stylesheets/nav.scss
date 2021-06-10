@@ -1,13 +1,14 @@
 .nav-bar {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    min-height: 40px;
+    align-items: center;
+    height: 72px;
     padding: 20px;
     box-sizing: border-box;
+    box-shadow: 0px 0px 32px 12px rgba(0, 0, 0, 0.05);
 }
 .nav-bar:hover {
-    border-bottom: 1px solid grey;
+    // border-bottom: 1px solid grey;
 }
 
 .nav-links {
@@ -32,6 +33,7 @@
     background-color: transparent;  
     width: fit-content;
     margin-top: 3px;
+    margin-right: 16px;
 }
 
 .nav-links > *:hover {
@@ -48,6 +50,8 @@
     border-radius: 5px;
     cursor: pointer;
     margin-top: 3px;
+    // margin-right: 16px;
+
 }
 
 .main-logo {
@@ -65,8 +69,9 @@
 
 .header-group {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    // justify-content: space-between;
 }
 
 
@@ -74,8 +79,8 @@
     font-family: "Neue plak";
     padding: 5px 5px 8px 5px;
     text-decoration: none;
-    color: rgb(31, 30, 30);
-    font-size: 24px;
+    color: rgb(61, 59, 59);
+    font-size: 16px;
 }
 
 .header-name:hover {

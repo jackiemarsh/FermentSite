@@ -8,13 +8,15 @@ const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
     formType: 'login',
+    session: state.session
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (user) => dispatch(login(user)),
+    login: (user) => dispatch(login(user)),
     navLink: (<Link to="/signup" onClick={(e) => { dispatch(resetSessionErrors()) }} className="link-text">Sign up for Fermentsite</Link>),
+    resetSessionErrors: () => dispatch(resetSessionErrors()),
   };
 };
 

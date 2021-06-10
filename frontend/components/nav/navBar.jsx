@@ -22,8 +22,8 @@ class NavBar extends React.Component {
         if (this.props.currentUser) {
             return (
                 <hgroup className="header-group">
-                    <NavLink to={`/users/${this.props.currentUser.id}`} className="header-name">Cheers, {this.props.currentUser.username}!</NavLink>
                     <button className="logout-button" onClick={this.handleClick}>Log Out</button>
+                    <NavLink to={`/users/${this.props.currentUser.id}`} className="header-name">Cheers, {this.props.currentUser.username}!</NavLink>
                     {/* <NavLink to="/" className="nav-links">Log Out</NavLink> */}
                 </hgroup>
             )
