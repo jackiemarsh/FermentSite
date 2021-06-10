@@ -54,7 +54,7 @@ class UserProfile extends React.Component {
 
                 <div className="events-attending">
                     <h2>Events coming up</h2>
-                    <ul className="event-feed">
+                    <ul className="event-feed" className="rsvp-feed">
                         {this.props.eventRsvps.map(event => (
                             <EventIndexItem key={event.id} event={event} />
                         ))}

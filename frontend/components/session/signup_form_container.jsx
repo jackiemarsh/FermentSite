@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { signup, resetSessionErrors } from '../../actions/session_actions';
+import { login, signup, resetSessionErrors } from '../../actions/session_actions';
 import SessionForm from './session_form_container';
 
 const mapStateToProps = ({ errors }) => {
@@ -14,9 +14,10 @@ const mapStateToProps = ({ errors }) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    processForm: (user) => dispatch(signup(user)),
+    signup: (user) => dispatch(signup(user)),
+    login: (user) => dispatch(login(user)),
     navLink: (<Link to="/login" onClick={(e) => { dispatch(resetSessionErrors()) }} className="link-text">Log In</Link>),
- 
+    resetSessionErrors: () => dispatch(resetSessionErrors())
   };
 };
 

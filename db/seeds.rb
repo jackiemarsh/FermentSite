@@ -10,8 +10,8 @@ User.delete_all
 Event.delete_all
 # rsvp.delete_all
 
-demoUser = User.create(username: "demo_drinker123", password: 12345678, email: "demo@fermentsite.com")
-user1 = User.create(username: "ilovefedoras", password: 12345678, email: "garrettoliver@gmail.com")
+demoUser = User.create!(username: "demo_drinker123", password: 12345678, email: "demo@fermentsite.com")
+user1 = User.create!(username: "ilovefedoras", password: 12345678, email: "garrettoliver@gmail.com")
 user2 = User.create!(username: "thegdfther", password: 12345678, email: "michael.jackson@yahoo.com")
 user3 = User.create!(username: "callmefritz", password: 12345678, email: "fritz@maytag.com")
 user4 = User.create!(username: "kengrossman", password: 12345678, email: "ken@sierranevada.com")

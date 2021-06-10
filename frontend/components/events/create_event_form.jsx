@@ -65,7 +65,10 @@ class CreateEventForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="event-form">
                     <div className="event-form-fields">
                         <div className="basic-info">
-                            <h1>Basic Info</h1>
+                            <h1 className="basic-header">Basic Info</h1>
+                            <h4 className="basic-instructions">Name your event and tell event-goers why they 
+                                should come. Add details that highlight what 
+                                makes it unique.</h4>
                             <div className="login-container">
                                 <label className="event-title">Event Title
                                     <input className="create-input" type="text"
