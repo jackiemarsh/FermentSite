@@ -4,13 +4,15 @@ import CreateEventForm from './create_event_form';
 
 
 const mSTP = (state) => ({
-    event: {
-        title: "",
-        description: "",
-        start_date: "",
-        location: "",
-        author_id: state.entities.users[state.session.id]["id"]
-    },
+    // event: {
+    //     title: "",
+    //     description: "",
+    //     start_date: "",
+    //     location: "",
+    //     image: null,
+    //     imageUrl: null,
+    //     author_id: state.session.id
+    // },
     currentUser: state.entities.users[state.session.id]
 });
 

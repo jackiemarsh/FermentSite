@@ -13,8 +13,8 @@ class Api::EventsController < ApplicationController
 
     def create
         @event = Event.new(event_params)
-        # @event.author_id = current_user.id
-        if @event.save!
+        @event.author_id = current_user.id
+        if @event.save
             render 'api/events/show'
         else
             render json: @event.errors.full_messages, status: 401
