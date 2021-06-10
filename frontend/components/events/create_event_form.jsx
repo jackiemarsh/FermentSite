@@ -61,32 +61,44 @@ class CreateEventForm extends React.Component {
 
         return (
             <div className="event-form-container">
-                <h2>Create An Event</h2>
+                <h2 className="form-header">Create Your Event</h2>
                 <form onSubmit={this.handleSubmit} className="event-form">
                     <div className="event-form-fields">
-                        <label className="event-title">Event Title
-                            <input type="text"
-                            value={this.state.title}
-                            onChange={this.update('title')}
-                            />
-                        </label>
+                        <div className="basic-info">
+                            <h1>Basic Info</h1>
+                            <div className="login-container">
+                                <label className="event-title">Event Title
+                                    <input className="create-input" type="text"
+                                    value={this.state.title}
+                                    onChange={this.update('title')}
+                                    />
+                                </label>
+                            </div>
+                            <div className="login-container">
+                                <label className="event-description">Event Description
+                                    <textarea className="create-input" value={this.state.description} 
+                                    onChange={this.update('description')}
+                                    />
+                                </label>
+                            </div>
+                        </div>
                         
-                        <label className="event-date">Date
-                            <input type="date"
-                            value={this.state.start_date}
-                            onChange={this.update('start_date')}/>
-                        </label>
+                        <div className="location-container"> <h1>Location</h1>
+                            <label className="event-location">
+                                <input type="text"
+                                value={this.state.location}
+                                onChange={this.update('location')}/>
+                            </label>
+                        </div>
+
+                        <div className="date-container">
+                            <label className="event-date">Date
+                                <input type="date"
+                                value={this.state.start_date}
+                                onChange={this.update('start_date')}/>
+                            </label>
+                        </div>
                        
-                        <label className="event-location">Location
-                            <input type="text"
-                            value={this.state.location}
-                            onChange={this.update('location')}/>
-                        </label>
-                        <label className="event-description">Event Description
-                            <textarea value={this.state.description} 
-                            onChange={this.update('description')}
-                            />
-                        </label>
                         <label className="event-image">Upload an image
                             <input type="file"
                             onChange={this.handleFile.bind(this)}/>

@@ -1,6 +1,7 @@
 import React from 'react'
 import EventIndexItem from '../events/event_index_item';
 import CreateEventFormContainer from '../events/create_event_container'
+import { Link } from 'react-router-dom'
 
 class UserProfile extends React.Component {
         constructor(props) {
@@ -47,7 +48,8 @@ class UserProfile extends React.Component {
                 </div>
 
                 <div>
-                    <CreateEventFormContainer />
+                    {/* <CreateEventFormContainer /> */}
+                    <Link to="/event/create" className="button-submit">Create Event</Link>
                 </div>
 
                 <div className="events-attending">
