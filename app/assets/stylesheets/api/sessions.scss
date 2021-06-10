@@ -105,3 +105,24 @@ input:focus {
 .link-text:hover {
     text-decoration: underline;
 }
+
+.demo-submit {
+    border: solid 2px var(--main-orange);
+    color: var(--main-orange);
+    font-weight: 400;
+    background: whitesmoke;
+    border-radius: 5px;
+    padding: 14px;
+}
+
+.demo-submit:hover {
+    background: rgb(240, 105, 15);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.demo-submit:active {
+    background: rgb(223, 71, 16);
+    color: whitesmoke;
+    box-shadow: 1px 1px 1px 1px rgb(189, 99, 66);
+}

@@ -4,3 +4,10 @@
 .profile-container {
     margin: 40px;
 }
+
+.events-attending {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
