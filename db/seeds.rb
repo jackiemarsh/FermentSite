@@ -60,3 +60,11 @@ event17.image.attach(io: open("https://fermentsite-seeds.s3-us-west-1.amazonaws.
 event18.image.attach(io: open("https://fermentsite-seeds.s3-us-west-1.amazonaws.com/beer-sign.jpg"), filename:'beer-sign.jpg')
 event19.image.attach(io: open("https://fermentsite-seeds.s3-us-west-1.amazonaws.com/various-beers-snacks-backlit.jpg"), filename:'various-beers-snacks-backlit.jpg')
 event20.image.attach(io: open("https://fermentsite-seeds.s3-us-west-1.amazonaws.com/mural-laughing-women.jpg"), filename:'mural-laughing-women.jpg')
+
+demoUser.image.attach(io: open("https://fermentsite-seeds.s3.us-west-1.amazonaws.com/blank-user.png"), filename:'blank-user.png')
+user1.image.attach(io: open("https://fermentsite-seeds.s3.us-west-1.amazonaws.com/garrett.png"), filename:'garrett.png')
+user2.image.attach(io: open("https://fermentsite-seeds.s3.us-west-1.amazonaws.com/michael.png"), filename:'michael.png')
+user3.image.attach(io: open("https://fermentsite-seeds.s3.us-west-1.amazonaws.com/fritz.png"), filename:'fritz.png')
+user4.image.attach(io: open("https://fermentsite-seeds.s3.us-west-1.amazonaws.com/ken.png"), filename:'ken.png')
+user5.image.attach(io: open("https://fermentsite-seeds.s3.us-west-1.amazonaws.com/ray.png"), filename:'ray.png')
+user6.image.attach(io: open("https://fermentsite-seeds.s3.us-west-1.amazonaws.com/brewers-assoc.png"), filename:'brewers-assoc.png')

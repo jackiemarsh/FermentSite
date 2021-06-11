@@ -6,12 +6,18 @@ import { Link } from 'react-router-dom'
 class UserProfile extends React.Component {
         constructor(props) {
             super(props)
-        this.filterEvents = this.filterEvents.bind(this)
+        this.filterEvents = this.filterEvents.bind(this);
+        this.userImage = this.userImage.bind(this);
+
+        this.state = {loading: true};
         }
 
     componentDidMount() {
-        this.props.fetchEventRsvps()
-        this.props.fetchEvents()
+        this.props.fetchEventRsvps();
+        this.props.fetchEvents();
+        this.setState({
+            loading: false,
+        })
     }
   
     filterEvents() {
@@ -28,9 +34,15 @@ class UserProfile extends React.Component {
         }
     }
 
+    userImage() {
+        return this.props.currentUser.imageUrl != undefined ? <img src={this.props.currentUser.imageUrl} alt="event pic" className="event-show-img"/> : <div className="event-show-img"></div>
+    }
+
     render() {
         if (this.props.currentUser === undefined) return null;
-
+        if (this.state.loading) {
+            return null
+        } else {
         return(
             <div className="user-container">
                 {/* <span>Fermentsite account since {this.props.currentUser.created_at}</span> */}
@@ -38,13 +50,13 @@ class UserProfile extends React.Component {
                 <div className="profile-box">
                     <div className="account-info">
                         <div className="user-email">
-                            <h3 className="account-email">Account email address</h3>
+                            <h3 className="account-header">Account email address</h3>
                             <h4>{this.props.currentUser.email}</h4>
                         </div>
                         <div className="account-photo">
-                            <h3>Profile Photo</h3>
+                            <h3 className="account-header">Profile Photo</h3>
                             <figure>
-                                {/* <img src={this.props.event.imageUrl} alt="event pic" className="event-show-img"/> */}
+                                {this.userImage()}
                             </figure>
                         </div>
                     </div>
@@ -60,21 +72,16 @@ class UserProfile extends React.Component {
                     </ul>
                 </div>
                 <div className="user-create-button-container">
-                    {/* <CreateEventFormContainer /> */}
                     <Link to="/event/create" className="button-submit">Create Event</Link>
                 </div>
                 <div className="events-created">
                     <h2 className="feed-header">Manage Your Events</h2>
                     <ul className="">
-                       {/* {userEvents.map(event => {
-                           <EventIndexItem key={event.id} event={event}/>
-                       })} */}
-                      
                        {this.filterEvents()}
                     </ul>
                 </div>
             </div>
         )
-    }
+    }}
 }
 export default UserProfile

@@ -1,6 +1,6 @@
 import React from 'react';
 import EventIndexItem from './event_index_item';
-import { withRouter } from 'react-router-dom';
+import { withRouter, NavLink } from 'react-router-dom';
 import LoadingIcon from './loader'
 
 // import * as eventImages from '../../../app/assets/images'
@@ -34,10 +34,12 @@ class EventIndex extends React.Component {
                     <div className="index-header-content-text">
                       <h3 className="index-header-top">Drink life to the last drop</h3>
                       <h1 className="event-create-link">Make plans</h1>
-                      <div className="event-create-arrow">
-                        <span>Browse events</span>
-                        <i className="fas fa-arrow-right"></i>
-                      </div>
+                      <NavLink to="/event/create" className="nav-create-submit">
+                        <div className="event-create-arrow">
+                          <span>Browse events</span>
+                          <i className="fas fa-arrow-right"></i>
+                        </div>
+                      </NavLink>
                     </div>
                     <img src={mainLogo} alt="beer cheers image" className="index-header-img"/>
                   </div>
