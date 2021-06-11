@@ -13,8 +13,8 @@
 
 .nav-links {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    // justify-content: center;
+    align-items: center;
     width: 121px;
     padding: 5px;
     color: rgb(56, 59, 59);
@@ -24,6 +24,18 @@
     color: darkslategrey;
     padding: 5px;
     text-decoration: none;
+    height: 72px;
+    margin-right: 18px;
+    margin-top: 30px;
+}
+
+.nav-links > *:hover {
+    background: rgb(217, 230, 238);
+    color: darkslategrey;
+    // margin-top: 30px;
+    // margin-right: 18px;
+    // padding: 5px;
+    cursor: pointer;
 }
 
 .logout-button {
@@ -66,14 +78,6 @@
     cursor: pointer;
 }
 
-.nav-links > *:hover {
-    background: rgb(217, 230, 238);
-    color: darkslategrey;
-    margin-top: 3px;
-    margin-right: 18px;
-    padding: 5px;
-    cursor: pointer;
-}
 .logout-button:hover {
     background: rgb(217, 230, 238);
     color: darkslategrey;
