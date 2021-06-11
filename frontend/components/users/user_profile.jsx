@@ -32,25 +32,24 @@ class UserProfile extends React.Component {
         if (this.props.currentUser === undefined) return null;
 
         return(
-            <div className="profile-container">
+            <div className="user-container">
+                {/* <span>Fermentsite account since {this.props.currentUser.created_at}</span> */}
                 <h1 className="page-header">Account Information</h1>
-                <div className="account-info">
-                    <div className="user-email">
-                        <h3 className="account-email">Account email address</h3>
-                        <h4>{this.props.currentUser.email}</h4>
-                    </div>
-                    <div className="account-photo">
-                        <h3>Profile Photo</h3>
-                        <figure>
-                            {/* <img src={this.props.event.imageUrl} alt="event pic" className="event-show-img"/> */}
-                        </figure>
+                <div className="profile-box">
+                    <div className="account-info">
+                        <div className="user-email">
+                            <h3 className="account-email">Account email address</h3>
+                            <h4>{this.props.currentUser.email}</h4>
+                        </div>
+                        <div className="account-photo">
+                            <h3>Profile Photo</h3>
+                            <figure>
+                                {/* <img src={this.props.event.imageUrl} alt="event pic" className="event-show-img"/> */}
+                            </figure>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    {/* <CreateEventFormContainer /> */}
-                    <Link to="/event/create" className="button-submit">Create Event</Link>
-                </div>
 
                 <div className="events-attending">
                     <h2 className="feed-header">Events coming up</h2>
@@ -59,6 +58,10 @@ class UserProfile extends React.Component {
                             <EventIndexItem key={event.id} event={event} />
                         ))}
                     </ul>
+                </div>
+                <div className="user-create-button-container">
+                    {/* <CreateEventFormContainer /> */}
+                    <Link to="/event/create" className="button-submit">Create Event</Link>
                 </div>
                 <div className="events-created">
                     <h2 className="feed-header">Manage Your Events</h2>

@@ -1,11 +1,22 @@
 // Place all the styles related to the api/users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.profile-container {
+.user-container {
     margin: 40px;
     display: flex;
     flex-direction: column;
     height: 100vh;
+}
+
+.profile-box {
+    height: 50vh;
+}
+
+.page-header {
+    font-size: 36px;
+    padding: 3px;
+    border-bottom: 1px solid lightgray;
+    margin: 5px;
 }
 
 .events-attending {
@@ -27,5 +38,20 @@
 
 .feed-header {
     font-size: 24px;
-    margin: 10px;
+    margin: 18px;
+    align-self: flex-start;
+}
+
+.user-create-button-container {
+    height: fit-content;
+    margin: 40px;
+}
+
+.events-created {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 40px;
+    min-height: 400px;
 }
