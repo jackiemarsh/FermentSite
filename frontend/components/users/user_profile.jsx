@@ -8,6 +8,7 @@ class UserProfile extends React.Component {
             super(props)
         this.filterEvents = this.filterEvents.bind(this);
         this.userImage = this.userImage.bind(this);
+        // this.userDate = this.userDate.bind(this)
 
         this.state = {loading: true};
         }
@@ -28,8 +29,6 @@ class UserProfile extends React.Component {
             console.log(userEvents)
             return userEvents.map(event => {
                 if (event.author_id === parseInt(this.props.currentUser.id)) {
-                    // console.log("author:" +event.author_id)
-                    // console.log("user:" +currentUser.id)
                     return <EventIndexItem key={event.id} event={event}/>;
                 }
             })
@@ -40,6 +39,10 @@ class UserProfile extends React.Component {
         return this.props.currentUser.imageUrl != undefined ? <img src={this.props.currentUser.imageUrl} alt="event pic" className="event-show-img"/> : <div className="event-show-img"></div>
     }
 
+    // userDate() {
+    //     return this.props.currentUser.created_at != undefined ? <span>Fermentsite account since {this.props.currentUser.created_at.getMonth()}</span> : null
+    // }
+
     render() {
         if (this.props.currentUser === undefined) return null;
         if (this.state.loading) {
@@ -47,8 +50,11 @@ class UserProfile extends React.Component {
         } else {
         return(
             <div className="user-container">
-                {/* <span>Fermentsite account since {this.props.currentUser.created_at}</span> */}
+            {/* <div>{this.userDate}</div> */}
+            <div className="user-page">
+                <span>Fermentsite account since {this.props.currentUser.created_at}</span>
                 <h1 className="page-header">Account Information</h1>
+            </div>
                 <div className="profile-box">
                     <div className="account-info">
                         <div className="user-email">
