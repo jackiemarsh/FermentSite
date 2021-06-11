@@ -24,8 +24,8 @@ class NavBar extends React.Component {
             return (
                 <hgroup className="header-group">
                     <NavLink to="/event/create" className="nav-create-submit"><i className="fas fa-plus"></i> Create an event</NavLink>
-                    <button className="logout-button" onClick={this.handleClick}>Log Out</button>
-                    <NavLink to={`/users/${this.props.currentUser.id}`} className="header-name"><i className="far fa-user-circle user-icon"></i> {this.props.currentUser.username}!</NavLink>
+                    <button className="logout-button" onClick={this.handleClick}> <i className="fas fa-sign-out-alt"></i>Log Out</button>
+                    <NavLink to={`/users/${this.props.currentUser.id}`} className="header-name"><i className="far fa-user-circle user-icon"></i> {this.props.currentUser.username}</NavLink>
                     {/* <NavLink to="/" className="nav-links">Log Out</NavLink> */}
                 </hgroup>
             )
