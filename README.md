@@ -34,6 +34,7 @@ Welcome to FermentSite, an eventbrite clone! This site is a curated sharespace f
    * Update and Delete of user, events, RSVPs
    * drop-down menu from Navbar
    * date-based sorting
+   * create form as modal
    * location-based searching, sorting, and display utilizing Maps API 
 
 
