@@ -18,6 +18,7 @@ class UserProfile extends React.Component {
         this.setState({
             loading: false,
         })
+        this.props.fetchUser()
     }
   
     filterEvents() {
