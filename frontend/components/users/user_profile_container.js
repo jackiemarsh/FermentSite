@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchEventRsvps, deleteEventRsvp } from '../../actions/rsvp_actions';
 import { fetchEvents } from '../../actions/event_actions';
+import { fetchUser } from '../../actions/session_actions';
 import UserProfile from './user_profile';
 
 
@@ -13,7 +14,8 @@ const mSTP = (state) => ({
 const mDTP = (dispatch) => ({
     fetchEvents: () => dispatch(fetchEvents()),
     fetchEventRsvps: () => dispatch(fetchEventRsvps()),
-    deleteEventRsvp: eventRSVPId => dispatch(deleteEventRsvp(eventRSVPId))
+    deleteEventRsvp: eventRSVPId => dispatch(deleteEventRsvp(eventRSVPId)),
+    fetchUser: (userId) => dispatch(fetchUser(currentUser.id))
 });
 
 export default connect(mSTP, mDTP)(UserProfile);
