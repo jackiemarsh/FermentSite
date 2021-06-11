@@ -5,6 +5,7 @@ Welcome to FermentSite, an eventbrite clone! This site is a curated sharespace f
 
 [Take a look around!](https://fermentsite.herokuapp.com/#/)
 
+
 # Features
 ------
 
@@ -12,6 +13,8 @@ Welcome to FermentSite, an eventbrite clone! This site is a curated sharespace f
 * Create, view, index events
 * RSVP to events
 * View events RSVPed to, and events created
+![event_index](https://github.com/jackiemarsh/FermentSite/blob/main/app/assets/images/Event-index.png)
+
 
 # Technologies
 ------
