@@ -14,7 +14,7 @@ class CreateEventForm extends React.Component {
         imageUrl: null,
         author_id: this.props.currentUser.id
         };
-        console.log(this.state)
+    
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleFile = this.handleFile.bind(this)
     }
@@ -38,8 +38,9 @@ class CreateEventForm extends React.Component {
         if (this.state.image) {
             formData.append("event[image]", this.state.image);
         }
-        this.props.createEvent(formData)
-        // this.props.history.replace(`/events/${this.state.id}`)
+        this.props.createEvent(formData).then((event) => {
+            this.props.history.replace(`/events/${event.id}`)
+        })
     }
 
     // handleFile(e) {
