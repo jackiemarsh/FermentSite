@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom'
 
 class CreateEventForm extends React.Component {
     constructor(props) {
@@ -36,9 +37,10 @@ class CreateEventForm extends React.Component {
         formData.append("event[author_id]", this.state.author_id)
         if (this.state.image) {
             formData.append("event[image]", this.state.image);
-        }
-        this.props.createEvent(formData)
+        };
+        this.props.createEvent(formData);
 
+        <Redirect to={`/`}/>;
     }
 
     // handleFile(e) {
