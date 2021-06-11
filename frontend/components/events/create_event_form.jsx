@@ -37,10 +37,9 @@ class CreateEventForm extends React.Component {
         formData.append("event[author_id]", this.state.author_id)
         if (this.state.image) {
             formData.append("event[image]", this.state.image);
-        };
-        this.props.createEvent(formData);
-
-        <Redirect to={`/`}/>;
+        }
+        this.props.createEvent(formData)
+        // this.props.history.replace(`/events/${this.state.id}`)
     }
 
     // handleFile(e) {

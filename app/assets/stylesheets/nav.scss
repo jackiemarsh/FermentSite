@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     height: 72px;
-    padding: 0px 20px;
+    padding: 0px 30px;
     box-sizing: border-box;
     box-shadow: 0px 0px 32px 12px rgba(0, 0, 0, 0.05);
 }
@@ -11,23 +11,30 @@
     // border-bottom: 1px solid grey;
 }
 
+.session-view {
+    height: 100%;
+    box-sizing: border-box;
+}
+
 .nav-links {
     display: flex;
-    // justify-content: center;
-    // height: 72px;
+    justify-content: center;
+    height: 100%;
     align-items: center;
     width: 121px;
-    padding: 5px;
+    // padding: 5px;
     color: rgb(56, 59, 59);
+    box-sizing: border-box;
 }
 
 .nav-links > * {
     color: darkslategrey;
-    padding: 5px;
+    padding: 25px 10px 0px 10px;
     text-decoration: none;
     height: 72px;
+    box-sizing: border-box;
     margin-right: 18px;
-    margin-top: 30px;
+    // margin-top: 30px;
 }
 
 .nav-links > *:hover {
