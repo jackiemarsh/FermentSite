@@ -1,5 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+
 // import GreetingContainer from '../greeting/greeting_container'
 
 class NavBar extends React.Component {
@@ -22,8 +23,9 @@ class NavBar extends React.Component {
         if (this.props.currentUser) {
             return (
                 <hgroup className="header-group">
+                    <NavLink to="/event/create" className="nav-create-submit"><i className="fas fa-plus"></i> Create an event</NavLink>
                     <button className="logout-button" onClick={this.handleClick}>Log Out</button>
-                    <NavLink to={`/users/${this.props.currentUser.id}`} className="header-name">Cheers, {this.props.currentUser.username}!</NavLink>
+                    <NavLink to={`/users/${this.props.currentUser.id}`} className="header-name"><i className="far fa-user-circle user-icon"></i> {this.props.currentUser.username}!</NavLink>
                     {/* <NavLink to="/" className="nav-links">Log Out</NavLink> */}
                 </hgroup>
             )
