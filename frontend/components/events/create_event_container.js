@@ -14,7 +14,7 @@ const mSTP = (state) => ({
     //     author_id: state.session.id
     // },
     currentUser: state.entities.users[state.session.id],
-    // id: state.entities.events.id
+
 });
 
 const mDTP = (dispatch) => ({
