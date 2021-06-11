@@ -15,7 +15,7 @@ const mDTP = (dispatch) => ({
     fetchEvents: () => dispatch(fetchEvents()),
     fetchEventRsvps: () => dispatch(fetchEventRsvps()),
     deleteEventRsvp: eventRSVPId => dispatch(deleteEventRsvp(eventRSVPId)),
-    fetchUser: (userId) => dispatch(fetchUser(currentUser.id))
+    fetchUser: (userId) => dispatch(fetchUser(userId))
 });
 
 export default connect(mSTP, mDTP)(UserProfile);

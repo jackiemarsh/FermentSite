@@ -6,39 +6,47 @@
 }
 
 .event-show {
-    width: 100%;
     margin: 0 100px 0 100px;
     box-sizing: border-box;
+    width: 600px;
+    // height: 700px;
+
 }
 
 .event-show-top {
     display: flex;
     box-sizing: border-box;
-    // grid-template-columns: 3fr 2fr;
     // border: 20px solid rgba(95, 23, 68, 0.349);
     justify-content: center;
     margin-top: 40px;
-    width: 100%;
+    width: 600px;
 }
 
-.event-show-img {
-    max-height: 500px;
+.event-show-image {
+    // max-height: 500px;
     // margin: 30px;
+
+    max-width: 400px;
 }
 
 .top-side {
     // position: absolute;
-    max-height: 500px;
+    // max-height: 500px;
     padding: 30px;
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     display: block;
     background-color: rgba(245, 243, 243, 0.89);
 }
 
 .event-show-date {
+    margin-bottom: 60px;
+}
 
+.event-show-author {
+    margin-top: 10px;
+    color: grey;
 }
 
 .event-show-mid {
@@ -52,20 +60,20 @@
 .rsvp-button {
     min-width: 200px;
     min-height: 40px;
-    background-color: green;
+    background-color: var(--main-orange);
     margin: 20px;
     border-radius: 5px;
     color: white;
 }
 
 .rsvp-button:hover {
-    background-color: rgb(97, 179, 97);
+    background-color: rgb(240, 105, 15);
     cursor: pointer;
 }
 
 .rsvp-button:active {
-    background-color: rgb(31, 92, 31);
-    box-shadow: 1px 1px 1px 1px rgb(96, 226, 96);
+    background: rgb(223, 71, 16);
+    box-shadow: 1px 1px 1px 1px rgb(189, 99, 66);
 }
 
 .event-show-bottom {
@@ -82,9 +90,18 @@
 .bottom-left {
     display: flex;
     flex-wrap: wrap;
+    align-items: space-between;
     flex-direction: column;
     margin-bottom: 30px;
     box-sizing: border-box;
+}
+
+.event-show-title {
+    margin-bottom: 20px;
+}
+
+.event-show-header {
+    margin-bottom: 12px;
 }
 
 .bottom-right {

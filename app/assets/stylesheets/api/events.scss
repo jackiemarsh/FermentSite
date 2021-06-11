@@ -113,7 +113,7 @@
     height: 80%;
     left: 5%;
     top: 10%;
-    background-color: #eaecf8;
+    background-color: #f2f4fa;
     width: 800px;
     z-index: 0;
     // align-self: flex-end;
@@ -227,3 +227,6 @@
 //     padding: 10px;
 //     box-sizing: border-box;
 // }
+.event-item-description {
+    overflow: hidden;
+}

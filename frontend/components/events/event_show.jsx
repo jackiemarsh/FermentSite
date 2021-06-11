@@ -31,11 +31,11 @@ class EventShow extends React.Component {
         if (this.props.event === undefined) return null;
         // console.log(this.props.event.start_date.toLocaleDateString('en-US', {month: 'long', day: 'numeric'}))
         return (
-            <div className="event-show-container">Test Show
+            <div className="event-show-container">
                 <section className="event-show">
                     <div className="event-show-top">
                         <figure>
-                            <img src={this.props.event.imageUrl} alt="event pic" className="event-show-img"/>
+                            <img src={this.props.event.imageUrl} alt="event pic" className="event-show-image"/>
                         </figure>
                         <div className="top-side">
                             <h4 className="event-show-date">{this.props.event.start_date}</h4>
