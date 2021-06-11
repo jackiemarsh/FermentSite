@@ -3,6 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .profile-container {
     margin: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
 .events-attending {
@@ -10,6 +13,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    margin-top: 40px;
 }
 
 .rsvp-feed {
@@ -19,4 +23,9 @@
     grid-template-columns: repeat(3, 33.33%);
     grid-template-rows: 1fr;
     overflow: scroll;
+}
+
+.feed-header {
+    font-size: 24px;
+    margin: 10px;
 }
