@@ -15,11 +15,12 @@ class UserProfile extends React.Component {
     componentDidMount() {
         this.props.fetchEventRsvps();
         this.props.fetchEvents();
-        this.setState({
-            loading: false,
-        })
-        this.props.fetchUser()
+        this.props.fetchUser(this.props.match.params.userId)
+        .then(() => this.setState({ loading: false}));
+
+        this.setState({ loading: false });
     }
+    
   
     filterEvents() {
         if (this.props.events != undefined) {
@@ -77,7 +78,7 @@ class UserProfile extends React.Component {
                 </div>
                 <div className="events-created">
                     <h2 className="feed-header">Manage Your Events</h2>
-                    <ul className="">
+                    <ul className="events-created-feed">
                        {this.filterEvents()}
                     </ul>
                 </div>
