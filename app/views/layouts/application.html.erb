@@ -5,6 +5,15 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+      <meta property="og:title" content="Project Title" />
+      <meta property='og:image' content="<%= image_url('Splash.png') %>"/>
+      <meta property="og:description"
+        content="An event forum for beer lovers of all kinds"
+      />
+      <meta property="og:url"
+        content="https://fermentsite.herokuapp.com/#/"
+      />
+
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 
