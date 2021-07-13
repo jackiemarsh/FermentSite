@@ -9,6 +9,7 @@ import UserProfileContainer from './users/user_profile_container'
 import EventIndexContainer from './events/events_index_container'
 import EventShowContainer from './events/event_show_container'
 import CreateEventContainer from './events/create_event_container'
+import Modal from './modal';
 
 <link href="//db.onlinewebfonts.com/c/a14ee85c79dd38d7271d1e04f79a3b93?family=Neue+Plak" rel="stylesheet" type="text/css"/>
 
@@ -17,6 +18,7 @@ const App = () => (
       {/* <header>
         <GreetingContainer />
        </header> */}
+       <Modal />
         <NavBarContainer />
   <Switch>
       <AuthRoute exact path="/login" component={LogInFormContainer} />

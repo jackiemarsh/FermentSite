@@ -1,6 +1,7 @@
 import React from 'react';
 import { createEventRsvp } from '../../actions/rsvp_actions';
 import EventIndexItem from './event_index_item';
+import Modal from '../modal'
 
 class EventShow extends React.Component {
     constructor(props) {
@@ -8,20 +9,39 @@ class EventShow extends React.Component {
         this.state = {
             loading: true,
         };
-        this.RsvpEvent = this.RsvpEvent.bind(this)
+        this.createRsvp = this.createRsvp.bind(this)
+        this.deleteRsvp = this.deleteRsvp.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
     }
 
-    RsvpEvent() {
+    showRSVP() {
+        console.log("showRSVP", this.props.eventRSVPs[this.props.event.id])
+       if(this.props.eventRSVPs[this.props.event.id]) {
+            return <button onClick={this.deleteRSVP} className="rsvp-button">Delete RSVP</button>
+        } else {
+            return <button onClick={this.createRsvp} className="rsvp-button">RSVP</button>
+        }
+    }
+
+    createRsvp() {
         let newRsvp = {
             userId: this.props.currentUser,
             eventId: this.props.event.id
         }
         this.props.createEventRsvp(newRsvp)
+            .then(this.props.openModal('success'))
+    }
+    deleteRsvp() {
+        let newRsvp = {
+            userId: this.props.currentUser,
+            eventId: this.props.event.id
+        }
+        this.props.deleteEventRsvp(this.props.eventRSVP.id)
+            .then(this.props.openModal('success'))
     }
 
     showDeleteEvent() {
-        console.log("delete", this.props.currentUser, this.props.event.author_id)
+        // console.log("delete", this.props.currentUser, this.props.event.author_id)
         if(this.props.currentUser == this.props.event.author_id) {
             return <button onClick={this.handleDelete} className="rsvp-button">Delete Event</button>
         } else {
@@ -31,7 +51,7 @@ class EventShow extends React.Component {
 
     handleDelete() {
         this.props.deleteEvent(this.props.event.id)
-        .then(() => this.props.history.push('/'))
+            .then(() => this.props.history.push('/'))
             // .then(() => window.location.reload());
     }
 
@@ -62,7 +82,8 @@ class EventShow extends React.Component {
                     <div className="event-show-mid">
                         {/* {this.props.currentUser == this.props.event.author_id ? <button onClick={this.props.deleteEvent(this.props.event.id)} className="rsvp-button">Delete Event</button> : ""} */}
                         {this.showDeleteEvent()}
-                        <button onClick={this.RsvpEvent} className="rsvp-button">RSVP</button>
+                        {/* <button onClick={this.handleRsvp} className="rsvp-button">RSVP</button> */}
+                        {this.showRSVP()}
                     </div>
                     <div className="event-show-bottom">
                        <div className="bottom-left">
