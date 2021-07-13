@@ -9,6 +9,7 @@ class EventShow extends React.Component {
             loading: true,
         };
         this.RsvpEvent = this.RsvpEvent.bind(this)
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     RsvpEvent() {
@@ -16,7 +17,22 @@ class EventShow extends React.Component {
             userId: this.props.currentUser,
             eventId: this.props.event.id
         }
-    this.props.createEventRsvp(newRsvp)
+        this.props.createEventRsvp(newRsvp)
+    }
+
+    showDeleteEvent() {
+        console.log("delete", this.props.currentUser, this.props.event.author_id)
+        if(this.props.currentUser == this.props.event.author_id) {
+            return <button onClick={this.handleDelete} className="rsvp-button">Delete Event</button>
+        } else {
+            return ""
+        }
+    }
+
+    handleDelete() {
+        this.props.deleteEvent(this.props.event.id)
+        .then(() => this.props.history.push('/'))
+            // .then(() => window.location.reload());
     }
 
     componentDidMount() {
@@ -44,6 +60,8 @@ class EventShow extends React.Component {
                         </div>
                     </div>
                     <div className="event-show-mid">
+                        {/* {this.props.currentUser == this.props.event.author_id ? <button onClick={this.props.deleteEvent(this.props.event.id)} className="rsvp-button">Delete Event</button> : ""} */}
+                        {this.showDeleteEvent()}
                         <button onClick={this.RsvpEvent} className="rsvp-button">RSVP</button>
                     </div>
                     <div className="event-show-bottom">
