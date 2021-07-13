@@ -18,4 +18,4 @@ const mDTP = (dispatch) => ({
     createEventRsvp: event => dispatch(createEventRsvp(event))
 })
 
-export default (connect(mSTP, mDTP)(EventShow))
+export default withRouter((connect(mSTP, mDTP)(EventShow)))
