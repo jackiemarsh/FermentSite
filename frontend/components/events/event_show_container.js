@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import EventShow from './event_show';
 import {withRouter} from 'react-router-dom'
 import {fetchEvent, fetchEvents, updateEvent, deleteEvent} from '../../actions/event_actions'
+import { fetchUser } from '../../actions/session_actions';
 import {createEventRsvp, deleteEventRsvp} from '../../actions/rsvp_actions'
 import {openModal} from '../../actions/modal_actions'
 
@@ -19,7 +20,9 @@ const mDTP = (dispatch) => ({
     updateEvent: event => dispatch(updateEvent(event)),
     deleteEvent: eventId => dispatch(deleteEvent(eventId)),
     createEventRsvp: event => dispatch(createEventRsvp(event)),
-    deleteEventRsvp: eventRSVPId => dispatch(deleteEventRsvp(eventRSVPId))
+    deleteEventRsvp: eventRSVPId => dispatch(deleteEventRsvp(eventRSVPId)),
+    fetchUser: (userId) => dispatch(fetchUser(userId))
+
 })
 
 export default withRouter((connect(mSTP, mDTP)(EventShow)))
