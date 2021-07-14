@@ -1,7 +1,7 @@
 import React from 'react';
-import { createEventRsvp } from '../../actions/rsvp_actions';
-import EventIndexItem from './event_index_item';
-import Modal from '../modal'
+// import { createEventRsvp } from '../../actions/rsvp_actions';
+// import EventIndexItem from './event_index_item';
+// import Modal from '../modal'
 
 class EventShow extends React.Component {
     constructor(props) {
@@ -14,13 +14,25 @@ class EventShow extends React.Component {
         this.handleDelete = this.handleDelete.bind(this)
     }
 
+    componentDidMount() {
+        this.props.fetchEventRsvps();
+        this.props.fetchEvents();
+        this.props.fetchUser(this.props.match.params.userId)
+        .then(() => this.setState({ loading: false}));
+
+        this.setState({ loading: false });
+    }
+
     showRSVP() {
         console.log("showRSVP", this.props.eventRSVPs[this.props.event.id])
-       if(this.props.eventRSVPs[this.props.event.id]) {
-            return <button onClick={this.deleteRSVP} className="rsvp-button">Delete RSVP</button>
-        } else {
-            return <button onClick={this.createRsvp} className="rsvp-button">RSVP</button>
-        }
+        console.log("all RSVPs", this.props.eventRSVPs, this.props.event.id)
+        // this.props.eventRSVPs.values.forEach(rsvp => {
+            // if(rsvp[this.props.event.id]) {
+                 return <button onClick={this.deleteRsvp} className="rsvp-button">Delete RSVP</button>
+            //  } else {
+            //      return <button onClick={this.createRsvp} className="rsvp-button">RSVP</button>
+            //  }
+        // })
     }
 
     createRsvp() {
@@ -31,13 +43,17 @@ class EventShow extends React.Component {
         this.props.createEventRsvp(newRsvp)
             .then(this.props.openModal('success'))
     }
+
     deleteRsvp() {
-        let newRsvp = {
-            userId: this.props.currentUser,
-            eventId: this.props.event.id
-        }
-        this.props.deleteEventRsvp(this.props.eventRSVP.id)
+        // let newRsvp = {
+        //     userId: this.props.currentUser,
+        //     eventId: this.props.event.id
+        // }
+        console.log("in deleteRsvp, event id passing in", this.props.event.id)
+        this.props.deleteEventRsvp(this.props.event.id)
             .then(this.props.openModal('success'))
+            // .then(() => this.props.history.push('/'))
+            // .then(() => window.location.reload());
     }
 
     showDeleteEvent() {
@@ -50,9 +66,9 @@ class EventShow extends React.Component {
     }
 
     handleDelete() {
-        this.props.deleteEvent(this.props.event.id)
+        this.props.deleteEventRsvp(this.props.event.id)
             .then(() => this.props.history.push('/'))
-            // .then(() => window.location.reload());
+            .then(() => window.location.reload());
     }
 
     componentDidMount() {

@@ -5,14 +5,13 @@ class CreateEventForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-
-        title: "",
-        description: "",
-        start_date: "",
-        location: "",
-        image: null,
-        imageUrl: null,
-        author_id: this.props.currentUser.id
+            title: "",
+            description: "",
+            start_date: "",
+            location: "",
+            image: null,
+            imageUrl: null,
+            author_id: this.props.currentUser.id
         };
     
         this.handleSubmit = this.handleSubmit.bind(this);
