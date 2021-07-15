@@ -34,7 +34,7 @@ class EventIndex extends React.Component {
                     <div className="index-header-content-text">
                       <h3 className="index-header-top">Drink life to the last drop</h3>
                       <h1 className="event-create-link">Make plans</h1>
-                      <NavLink to="/event/create" className="nav-create-submit">
+                      <NavLink to="/event/create" className="nav-create-submit splash">
                         <div className="event-create-arrow">
                           <span>Start something</span>
                           <i className="fas fa-arrow-right"></i>

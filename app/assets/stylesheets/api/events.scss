@@ -64,6 +64,26 @@
     margin-top: 15px;
 }   
 
+.event-create-arrow:hover {
+    background: rgb(240, 105, 15);
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.event-create-arrow:active {
+    background: rgb(223, 71, 16);
+    color: whitesmoke;
+    box-shadow: 1px 1px 1px 1px rgb(189, 99, 66);
+}
+
+.splash:hover {
+    background: none;
+}
+
+.fa-arrow-right {
+    margin-left: 12px;
+}
+
 .index-header-img {
     width: 250px;
     z-index: 1;
