@@ -16,7 +16,6 @@ class EventShow extends React.Component {
 
     componentDidMount() {
         // this.props.fetchEventRsvps();
-        // this.props.fetchEvents();
         this.props.fetchEvent(this.props.match.params.eventId)
         this.props.fetchUser(this.props.match.params.userId)
             .then(() => this.setState({ loading: false}));
