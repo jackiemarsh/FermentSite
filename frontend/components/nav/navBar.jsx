@@ -14,7 +14,8 @@ class NavBar extends React.Component {
 
     handleClick(e) {
         e.preventDefault();
-        this.props.processLogout();
+        this.props.processLogout()
+            .then(() => this.props.history.push('/'))
       }
 
     sessionView() {

@@ -1,5 +1,7 @@
 import { signup, login, logout } from '../../actions/session_actions'
 import { connect } from 'react-redux'
+
+import {withRouter} from 'react-router-dom'
 import Nav from './navBar'
 
 const mSTP = (state) => {
@@ -14,4 +16,4 @@ const mDTP = (dispatch) => ({
     processLogout: () => dispatch(logout())
 })
 
-export default connect(mSTP, mDTP)(Nav)
+export default withRouter(connect(mSTP, mDTP)(Nav))
