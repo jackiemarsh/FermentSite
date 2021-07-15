@@ -92,8 +92,18 @@
 }
 
 .user-create-button-container {
-    height: fit-content;
-    padding: 40px 40px 0px 40px;
+    position: sticky;
+    top: 0px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    height: auto;
+    box-sizing: border-box;
+    // padding: 40px 40px 0px 40px;
+    padding: 20px;
+}
+.user-create-button-container > a {
+    // margin-bottom: 32px;
 }
 
 .events-created {
