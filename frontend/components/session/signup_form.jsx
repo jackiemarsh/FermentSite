@@ -100,14 +100,14 @@ class SignupForm extends React.Component {
 
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSignUp} className="login-form">
+        <form onSubmit={this.handleSignUp} className="signup-form">
 
           <div className="form-intro">
           <h1>Create an account</h1>
             {this.renderErrors()}
           </div>
 
-          <div className="login-fields">
+          <div className="signup-fields">
             <div className="login-container">
               <label>Username
                 <input type="text"
@@ -134,7 +134,7 @@ class SignupForm extends React.Component {
                 />
               </label>
             </div>
-            <div className="login-pic">
+            <div className="signup-pic">
               <label className="event-image">Upload an image
                 <input type="file"
                 onChange={this.handleFile.bind(this)}/>
