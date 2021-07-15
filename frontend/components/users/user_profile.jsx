@@ -26,7 +26,6 @@ class UserProfile extends React.Component {
     filterEvents() {
         if (this.props.events != undefined) {
             let userEvents = this.props.events;
-            console.log(userEvents)
             return userEvents.map(event => {
                 if (event.author_id === parseInt(this.props.currentUser.id)) {
                     return <EventIndexItem key={event.id} event={event}/>;

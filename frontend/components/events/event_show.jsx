@@ -30,13 +30,9 @@ class EventShow extends React.Component {
     //     this.setState({ loading: false });
     // }
     showRSVP() {
-        console.log("all RSVPs", this.props.eventRSVPs, this.props.event.id)
-        console.log("values", Object.values(this.props.eventRSVPs))
-        let rsvps = Object.values(this.props.eventRSVPs)
+       let rsvps = Object.values(this.props.eventRSVPs)
         // let exists = false
-        for(let i = 0; i<rsvps.length; i++) {
-            console.log("rsvp", rsvps, rsvps[i].event_id, this.props.event.id)
-            if (rsvps[i].event_id == this.props.event.id) {
+        for(let i = 0; i<rsvps.length; i++) {if (rsvps[i].event_id == this.props.event.id) {
                 // exists = true;
                  return <button onClick={this.deleteRsvp} className="rsvp-button">Delete RSVP</button>
             } 
@@ -56,11 +52,6 @@ class EventShow extends React.Component {
     }
 
     deleteRsvp() {
-        // let newRsvp = {
-        //     userId: this.props.currentUser,
-        //     eventId: this.props.event.id
-        // }
-        console.log("in deleteRsvp, event id passing in", this.props.event.id)
         this.props.deleteEventRsvp(this.props.event.id)
             .then(this.props.openModal('success'))
             .then(() => this.props.history.push(`/users/${this.props.currentUser}`))
