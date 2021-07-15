@@ -16,6 +16,20 @@
     box-sizing: border-box;
 }
 
+.left-nav {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.about-links {
+    top: 3px;
+}
+
+.about-links * {
+    color: rgb(56, 59, 59);
+}
+
 .nav-links {
     display: flex;
     justify-content: center;
@@ -103,8 +117,8 @@
     color: var(--main-orange);
     font-family: "Neue plak";
     text-decoration: none;
-    height: 72px;
-    margin-top: -3px;
+    height: 58px;
+    // margin-top: -3px;
 }
 
 .header-group {
