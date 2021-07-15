@@ -9,7 +9,6 @@ class SignupForm extends React.Component {
       email: ''
     };
     this.handleSignUp = this.handleSignUp.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
     this.renderHandleFile = this.renderHandleFile.bind(this);
     this.demoSubmit = this.demoSubmit.bind(this);
     
@@ -41,7 +40,6 @@ class SignupForm extends React.Component {
 
   handleSignUp(e) {
     e.preventDefault();
-    // const user = Object.assign({}, this.state);
     const formData = new FormData();
     formData.append("user[username]", this.state.username)
     formData.append("user[password]", this.state.password)
@@ -50,12 +48,6 @@ class SignupForm extends React.Component {
       formData.append("user[image]", this.state.image);
   }
     this.props.signup(formData);
-  }
-
-  handleLogin(e) {
-    e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.login(user)
   }
 
   handleFile(e){
@@ -100,54 +92,18 @@ class SignupForm extends React.Component {
   }
   }
 
-  heading() {
-    if (this.props.formType === 'login') {
-      return (<h1>Log in</h1>)
-    } else {
-      return (<h1>Create an account</h1>)
-    }
-  }
-
-  conditional() {
-    if (this.props.formType === 'login') {
-      return null
-    } else {
-      return (
-      <div className="login-container">
-        <label>Email
-          <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="login-input" required/>
-          </label>
-      </div> ) 
-    }
-  }
-
   render() {
-    //   const emailField = this.props.formType === 'signup' ?  <label>Email:
-    //   <input type="text"
-    //     value={this.state.email}
-    //     onChange={this.update('email')}
-    //     className="login-input"
-    //   />
-    // </label> : null
-
     const demoButton = this.props.formType === 'signup' ? <div>Don't want to sign up?
       <button onClick={this.demoSubmit} className="demo-submit">Demo Login</button>
     </div>
    : null
 
-    const submitText = this.props.formType === 'signup' ? "Create account" :
-    "Log in"
-    const handleForm = this.props.formType === 'signup' ? this.handleSignUp : this.handleLogin
-    
     return (
       <div className="login-form-container">
-        <form onSubmit={handleForm} className="login-form">
+        <form onSubmit={this.handleSignUp} className="login-form">
 
           <div className="form-intro">
-            {this.heading()}
+          <h1>Create an account</h1>
             {this.renderErrors()}
           </div>
 
@@ -161,7 +117,14 @@ class SignupForm extends React.Component {
                 />
               </label>
             </div>
-                {this.conditional()}
+            <div className="login-container">
+              <label>Email
+                <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="login-input" required/>
+              </label>
+            </div> 
             <div className="login-container">
               <label>Password
                 <input type="password"
@@ -171,15 +134,13 @@ class SignupForm extends React.Component {
                 />
               </label>
             </div>
-            <div>{this.renderHandleFile()}</div> 
-              
-            {/* <div className="login-pic">
+            <div className="login-pic">
               <label className="event-image">Upload an image
-                  <input type="file"
-                  onChange={this.handleFile.bind(this)}/>
-                </label>
-            </div> */}
-            <input className="button-submit" type="submit" value={submitText} />
+                <input type="file"
+                onChange={this.handleFile.bind(this)}/>
+              </label>
+            </div>
+            <input className="button-submit" type="submit" value='Signup' />
             <div>{demoButton}</div> 
           </div>
           {this.props.navLink}
