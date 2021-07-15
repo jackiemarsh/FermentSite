@@ -36,7 +36,7 @@ class EventIndex extends React.Component {
                       <h1 className="event-create-link">Make plans</h1>
                       <NavLink to="/event/create" className="nav-create-submit">
                         <div className="event-create-arrow">
-                          <span>Browse events</span>
+                          <span>Start something</span>
                           <i className="fas fa-arrow-right"></i>
                         </div>
                       </NavLink>
@@ -53,7 +53,7 @@ class EventIndex extends React.Component {
                     <EventIndexItem key={event.id} event={event} />
                     ))}
                 </ul>
-              </div>
+              </div> 
           </div>
         );
         }
