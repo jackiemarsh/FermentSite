@@ -16,9 +16,9 @@ class Api::EventRsvpsController < ApplicationController
     end
 
     def destroy
-        @event_rsvp = EventRsvp.find(params[:id])
-        if @event_rsvp 
-            @event_rsvp.destroy
+        @event_rsvp = EventRsvp.find_by(event_id: params[:id])
+        if @event_rsvp && @event_rsvp.destroy
+            render json: { id: @event_rsvp.id }
             # render 'api/events/show'
         else
             render json: ['You are not RSVPed to this event'], status: 422

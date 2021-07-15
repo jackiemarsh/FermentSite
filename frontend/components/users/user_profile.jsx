@@ -17,7 +17,7 @@ class UserProfile extends React.Component {
         this.props.fetchEventRsvps();
         this.props.fetchEvents();
         this.props.fetchUser(this.props.match.params.userId)
-        .then(() => this.setState({ loading: false}));
+            .then(() => this.setState({ loading: false}));
 
         this.setState({ loading: false });
     }
