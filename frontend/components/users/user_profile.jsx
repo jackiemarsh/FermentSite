@@ -39,6 +39,10 @@ class UserProfile extends React.Component {
         return this.props.currentUser.imageUrl != undefined ? <img src={this.props.currentUser.imageUrl} alt="event pic" className="event-show-img"/> : <div className="event-show-img"></div>
     }
 
+    // userDate() {
+    //     return this.props.currentUser.created_at != undefined ? <span>Fermentsite account since {this.props.currentUser.created_at.getMonth()}</span> : null
+    // }
+
     render() {
         if (this.props.currentUser === undefined) return null;
         if (this.state.loading) {
