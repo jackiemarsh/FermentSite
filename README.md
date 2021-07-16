@@ -14,6 +14,7 @@ Welcome to FermentSite, an eventbrite clone! This site is a curated sharespace f
 * RSVP to events
 * View events RSVPed to, and events created
 ![event_index](https://github.com/jackiemarsh/FermentSite/blob/main/app/assets/images/Event-index.png)
+![event_index](https://github.com/jackiemarsh/FermentSite/blob/main/app/assets/images/CodeSnip1.png)
 
 
 # Technologies
