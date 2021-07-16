@@ -37,7 +37,8 @@ class CreateEventForm extends React.Component {
         if (this.state.image) {
             formData.append("event[image]", this.state.image);
         }
-        this.props.createEvent(formData).then((event) => {
+        this.props.createEvent(formData)
+            .then((event) => {
             this.props.history.replace(`/events/${event.id}`)
         })
     }

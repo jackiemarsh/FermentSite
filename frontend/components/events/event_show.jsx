@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 // import { createEventRsvp } from '../../actions/rsvp_actions';
 // import EventIndexItem from './event_index_item';
 // import Modal from '../modal'
@@ -12,6 +13,7 @@ class EventShow extends React.Component {
         this.createRsvp = this.createRsvp.bind(this)
         this.deleteRsvp = this.deleteRsvp.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
+        // this.handleEdit = this.handleEdit.bind(this)
     }
 
     componentDidMount() {
@@ -60,8 +62,7 @@ class EventShow extends React.Component {
         //     userId: this.props.currentUser,
         //     eventId: this.props.event.id
         // }
-        console.log("in deleteRsvp, event id passing in", this.props.event.id)
-        this.props.deleteEventRsvp(this.props.event.id)
+         this.props.deleteEventRsvp(this.props.event.id)
             .then(this.props.openModal('success'))
             .then(() => this.props.history.push(`/users/${this.props.currentUser}`))
             .then(() => window.location.reload());
@@ -82,10 +83,27 @@ class EventShow extends React.Component {
             .then(() => window.location.reload());
     }
 
+    // handleEdit(e) {
+    //     e.preventDefault();
+    //     this.props.history.push(`/events/${e.currentTarget.value}/edit`);
+    // }
+
+    showEdit() {
+        let userId = this.props.currentUser;
+        let ownerId = this.props.event.author_id;
+        if (userId === ownerId) {
+            return (
+                // <button className="rsvp-button" value={this.props.event.id} onClick={this.handleEdit}>Edit Event</button>
+                <Link to={`/events/${this.props.event.id}/edit`} className="rsvp-button-container">
+                    <div className="rsvp-button">Edit Event</div>
+                </Link>
+                )
+        }
+    }
+
     render() {
         if (this.state.loading) return null;
         if (this.props.event === undefined) return null;
-        // console.log(this.props.event.start_date.toLocaleDateString('en-US', {month: 'long', day: 'numeric'}))
         return (
             <div className="event-show-container">
                 <section className="event-show">
@@ -104,6 +122,7 @@ class EventShow extends React.Component {
                         {this.showDeleteEvent()}
                         {/* <button onClick={this.handleRsvp} className="rsvp-button">RSVP</button> */}
                         {this.showRSVP()}
+                        {this.showEdit()}
                     </div>
                     <div className="event-show-bottom">
                        <div className="bottom-left">
