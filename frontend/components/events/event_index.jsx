@@ -10,12 +10,7 @@ import LoadingIcon from './loader'
 class EventIndex extends React.Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     index: 0
-        // };
-
-        // this.selectCategory = this.selectCategory.bind(this);
-    }
+           }
 
     componentDidMount() {
         this.props.fetchEvents();
