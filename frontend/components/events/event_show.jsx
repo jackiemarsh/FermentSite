@@ -23,17 +23,9 @@ class EventShow extends React.Component {
         this.setState({ loading: false });
     }
 
-    // componentDidMount() {
-    //     this.props.fetchEvent(this.props.match.params.eventId)
-    //         .then(() => this.setState({ loading: false}));
-
-    //     this.setState({ loading: false });
-    // }
     showRSVP() {
        let rsvps = Object.values(this.props.eventRSVPs)
-        // let exists = false
         for(let i = 0; i<rsvps.length; i++) {if (rsvps[i].event_id == this.props.event.id) {
-                // exists = true;
                  return <button onClick={this.deleteRsvp} className="rsvp-button">Delete RSVP</button>
             } 
         }
