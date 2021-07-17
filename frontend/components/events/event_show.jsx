@@ -18,9 +18,11 @@ class EventShow extends React.Component {
 
     componentDidMount() {
         // this.props.fetchEventRsvps();
+        window.scrollTo(0,0)
         this.props.fetchEvent(this.props.match.params.eventId)
         this.props.fetchUser(this.props.match.params.userId)
-            .then(() => this.setState({ loading: false}));
+            .then(() => this.setState({ loading: false}))
+           
 
         this.setState({ loading: false });
     }
@@ -32,12 +34,9 @@ class EventShow extends React.Component {
     //     this.setState({ loading: false });
     // }
     showRSVP() {
-        console.log("all RSVPs", this.props.eventRSVPs, this.props.event.id)
-        console.log("values", Object.values(this.props.eventRSVPs))
         let rsvps = Object.values(this.props.eventRSVPs)
         // let exists = false
         for(let i = 0; i<rsvps.length; i++) {
-            console.log("rsvp", rsvps, rsvps[i].event_id, this.props.event.id)
             if (rsvps[i].event_id == this.props.event.id) {
                 // exists = true;
                  return <button onClick={this.deleteRsvp} className="rsvp-button">Delete RSVP</button>
@@ -58,10 +57,6 @@ class EventShow extends React.Component {
     }
 
     deleteRsvp() {
-        // let newRsvp = {
-        //     userId: this.props.currentUser,
-        //     eventId: this.props.event.id
-        // }
          this.props.deleteEventRsvp(this.props.event.id)
             .then(this.props.openModal('success'))
             .then(() => this.props.history.push(`/users/${this.props.currentUser}`))
@@ -69,7 +64,6 @@ class EventShow extends React.Component {
     }
 
     showDeleteEvent() {
-        // console.log("delete", this.props.currentUser, this.props.event.author_id)
         if(this.props.currentUser == this.props.event.author_id) {
             return <button onClick={this.handleDelete} className="rsvp-button">Delete Event</button>
         } else {
@@ -95,7 +89,7 @@ class EventShow extends React.Component {
             return (
                 // <button className="rsvp-button" value={this.props.event.id} onClick={this.handleEdit}>Edit Event</button>
                 <Link to={`/events/${this.props.event.id}/edit`} className="rsvp-button-container">
-                    <div className="rsvp-button">Edit Event</div>
+                    <button className="rsvp-button">Edit Event</button>
                 </Link>
                 )
         }
