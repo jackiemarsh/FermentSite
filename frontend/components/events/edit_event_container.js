@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { updateEvent, fetchEvent } from '../../actions/event_actions';
 import EditEventForm from './edit_event';
+import {openModal} from '../../actions/modal_actions'
 
 
 const mSTP = (state, ownProps) => {
@@ -11,6 +12,7 @@ const mSTP = (state, ownProps) => {
 };
 
 const mDTP = (dispatch) => ({
+    openModal: modal => dispatch(openModal(modal)),
     updateEvent: event => dispatch(updateEvent(event)),
     fetchEvent: eventId => dispatch(fetchEvent(eventId))
 });

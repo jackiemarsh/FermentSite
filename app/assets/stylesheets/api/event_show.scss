@@ -32,6 +32,8 @@
 .top-side {
     // position: absolute;
     // max-height: 500px;
+    max-width: 200px;
+    box-sizing: border-box;
     padding: 30px;
     display: flex;
     flex-direction: column;
