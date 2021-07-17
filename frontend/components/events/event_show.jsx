@@ -96,9 +96,11 @@ class EventShow extends React.Component {
             <div className="event-show-container">
                 <section className="event-show">
                     <div className="event-show-top">
-                        <figure>
+                        {/* <figure> */}
+                        <div className="top-img">
                             <img src={this.props.event.imageUrl} alt="event pic" className="event-show-image"/>
-                        </figure>
+                        {/* </figure> */}
+                        </div>
                         <div className="top-side">
                             <h4 className="event-show-date">{this.props.event.start_date}</h4>
                             <h2 className="event-show-title">{this.props.event.title}</h2>
