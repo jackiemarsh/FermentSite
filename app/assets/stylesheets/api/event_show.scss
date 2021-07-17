@@ -10,35 +10,44 @@
     box-sizing: border-box;
     width: 600px;
     // height: 700px;
-
 }
 
 .event-show-top {
-    display: flex;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     box-sizing: border-box;
     // border: 20px solid rgba(95, 23, 68, 0.349);
-    justify-content: center;
+    // justify-content: center;
     margin-top: 40px;
     width: 600px;
 }
 
-.event-show-image {
+.top-img {
     // max-height: 500px;
     // margin: 30px;
+    // background-size: contain;
+    background-color: rgba(245, 243, 243, 0.89);
+    // width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-    max-width: 400px;
+.event-show-image {
+    height: 100%;
+    width: auto;
 }
 
 .top-side {
     // position: absolute;
     // max-height: 500px;
-    max-width: 200px;
+    // width: 200px;
     box-sizing: border-box;
     padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    display: block;
+    // display: block;
     background-color: rgba(245, 243, 243, 0.89);
 }
 
