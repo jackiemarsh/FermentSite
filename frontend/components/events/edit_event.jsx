@@ -5,21 +5,21 @@ class EditEventForm extends React.Component {
         super(props);
         this.state = this.props.event;
         this.handleSubmit = this.handleSubmit.bind(this);
-        console.log("constructor", this.props)
     }
     
     componentDidMount() {
         window.scrollTo(0, 0);
-        console.log("CDM", this.state)
         this.props.fetchEvent(this.props.match.params.eventId)
-        console.log(this.props.match.params.eventId)
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.updateEvent(this.state)
-            .then(event => this.props.history.push(`/events/${event.id}`));
-    }
+            .then(event => {
+                this.props.history.push(`/events/${event.event.id}`)
+                }
+                );
+        }
 
     update(field) {
         return e => this.setState({ 
@@ -33,34 +33,45 @@ class EditEventForm extends React.Component {
 
         return (
             <div className="event-form-container">
-                <h2>Edit Your Event</h2>
-                <form className="form-header" onSubmit={this.handleSubmit}>
-                    <div className="event-form-fields"> <label className="event-title">Event Title
-                            <input className="create-input" type="text"
+                <h2 className="form-header">Edit Your Event</h2>
+                <form  onSubmit={this.handleSubmit} className="event-form">
+                    <div className="event-form-fields">
+                    <div className="basic-info">
+                        {/* <h1 className="basic-header">Basic Info</h1> */}
+                        <div className="login-container">
+                            <label className="event-title">Event Title
+                                <input className="create-input" type="text"
                                 placeholder="Give it a name"
                                 value={this.state.title}
                                 onChange={this.update('title')}
-                            />
-                        </label> <label className="event-description">Event Description
-                            <textarea value={this.state.description}
-                                onChange={this.update('description')}
                                 />
-                        </label>  
-                        <div className="location-container"> <h1>Location</h1>
-                            <label className="event-location">
-                                <input type="text"
-                                value={this.state.location}
-                                onChange={this.update('location')}/>
                             </label>
                         </div>
-                        <label id="event-start">Date
-                            <input type="date"
-                                min={currentDate}
-                                value={this.state.start_date}
-                                onChange={this.update('start_date')} />
+                        <div className="login-container">
+                            <label className="event-description">Event Description
+                                <textarea className="create-input" value={this.state.description} 
+                                onChange={this.update('description')}
+                                />
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="location-container"> <h1>Location</h1>
+                        <label className="event-location">
+                            <input type="text"
+                            value={this.state.location}
+                            onChange={this.update('location')}/>
                         </label>
                     </div>
-                    <button>Save</button>
+                    <div className="date-container">
+                        <label className="event-date">Date
+                            <input type="date"
+                            value={this.state.start_date}
+                            onChange={this.update('start_date')}/>
+                        </label>
+                    </div>
+                </div>
+                    <input className="button-submit" type="submit" value="Save" />
                 </form>
             </div>
         )
