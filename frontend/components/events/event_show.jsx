@@ -50,7 +50,8 @@ class EventShow extends React.Component {
             .then(() => window.location.reload());
     }
 
-    deleteRsvp() {
+    deleteRsvp(e) {
+        e.preventDefault();
          this.props.deleteEventRsvp(this.props.event.id)
             .then(this.props.openModal('success'))
             .then(() => this.props.history.push(`/users/${this.props.currentUser}`))
@@ -65,11 +66,11 @@ class EventShow extends React.Component {
         }
     }
 
-    handleDelete() {
-        console.log(this.props.event.id)
+    handleDelete(e) {
+        e.preventDefault();
         this.props.deleteEvent(this.props.event.id)
             .then(this.props.openModal('success'))
-            .then(() => this.props.history.push('/'))
+            .then(() => this.props.history.push('/users/${this.props.currentUser}'))
             .then(() => window.location.reload());
     }
 

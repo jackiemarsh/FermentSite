@@ -30,7 +30,7 @@
     background-color: rgba(245, 243, 243, 0.89);
     // width: 400px;
     max-height: 480px;
-    max-width: 600px;
+    max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,7 +43,7 @@
 
 .top-side {
     // position: absolute;
-    // width: 200px;
+    max-width: 200px;
     box-sizing: border-box;
     padding: 30px;
     display: flex;
