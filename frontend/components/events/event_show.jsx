@@ -66,7 +66,9 @@ class EventShow extends React.Component {
     }
 
     handleDelete() {
-        this.props.deleteEventRsvp(this.props.event.id)
+        console.log(this.props.event.id)
+        this.props.deleteEvent(this.props.event.id)
+            .then(this.props.openModal('success'))
             .then(() => this.props.history.push('/'))
             .then(() => window.location.reload());
     }
