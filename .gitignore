@@ -7,3 +7,4 @@ master.key
 bundle.js
 bundle.js.map
 log/
+/public/assets
