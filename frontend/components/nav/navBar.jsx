@@ -46,8 +46,8 @@ class NavBar extends React.Component {
             <header className="nav-bar">
                 <div className="left-nav"> 
                     <span className="about-links">
-                        <a href="https://github.com/jackiemarsh"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/jackie-marsh-a988874b/"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/jackiemarsh"><i className="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/jackie-marsh-a988874b/"><i className="fab fa-linkedin"></i></a>
                     </span> 
                         <NavLink to="/" className="main-logo">fermentsite</NavLink>
                 </div>
