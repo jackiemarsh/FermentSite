@@ -26,8 +26,7 @@ class CreateEventForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // const event = Object.assign({}, this.state);
-        // this.props.createEvent(event)
+
         const formData = new FormData();
         formData.append("event[title]", this.state.title);
         formData.append("event[description]", this.state.description);
