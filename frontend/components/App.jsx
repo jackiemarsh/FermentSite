@@ -12,7 +12,7 @@ import CreateEventContainer from './events/create_event_container'
 import EditEventContainer from './events/edit_event_container'
 import Modal from './modal';
 
-<link href="//db.onlinewebfonts.com/c/a14ee85c79dd38d7271d1e04f79a3b93?family=Neue+Plak" rel="stylesheet" type="text/css"/>
+<link href="https://db.onlinewebfonts.com/c/a14ee85c79dd38d7271d1e04f79a3b93?family=Neue+Plak" rel="stylesheet" type="text/css"/>
 
 const App = () => (
   <div>
