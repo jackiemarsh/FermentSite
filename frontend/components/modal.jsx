@@ -19,6 +19,9 @@ function Modal({modal, closeModal}) {
     case 'success':
       component = <div className="login-container">Success!</div>;
       break;
+    case 'signin':
+      component = <div className="login-container">You need to log in</div>;
+      break;
     default:
       return null;
   }

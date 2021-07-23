@@ -36,7 +36,9 @@ class EventShow extends React.Component {
                  return <button onClick={this.deleteRsvp} className="rsvp-button">Delete RSVP</button>
             } 
         }
+        if (this.props.currentUser) { 
         return <button onClick={this.createRsvp} className="rsvp-button">RSVP</button>
+        }
     }
 
     createRsvp() {
