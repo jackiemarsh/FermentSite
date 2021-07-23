@@ -29,10 +29,8 @@ class EventShow extends React.Component {
 
     showRSVP() {
         let rsvps = Object.values(this.props.eventRSVPs)
-        // let exists = false
         for(let i = 0; i<rsvps.length; i++) {
             if (rsvps[i].event_id == this.props.event.id) {
-                // exists = true;
                  return <button onClick={this.deleteRsvp} className="rsvp-button">Delete RSVP</button>
             } 
         }
