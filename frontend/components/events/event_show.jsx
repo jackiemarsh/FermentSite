@@ -83,7 +83,6 @@ class EventShow extends React.Component {
         let ownerId = this.props.event.author_id;
         if (userId === ownerId) {
             return (
-                // <button className="rsvp-button" value={this.props.event.id} onClick={this.handleEdit}>Edit Event</button>
                 <Link to={`/events/${this.props.event.id}/edit`} className="rsvp-button-container">
                     <button className="rsvp-button">Edit Event</button>
                 </Link>
