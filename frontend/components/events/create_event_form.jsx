@@ -42,12 +42,9 @@ class CreateEventForm extends React.Component {
         })
     }
 
-    // handleFile(e) {
-    //     e.preventDefault();
-    //     this.setState({image: e.currentTarget.files[0]});
-    // }
     
     handleFile(e){
+        e.preventDefault();
         const file = e.currentTarget.files[0];
         const filereader = new FileReader();
         filereader.onloadend = () => {
