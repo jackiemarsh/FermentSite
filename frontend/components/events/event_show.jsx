@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
-// import { createEventRsvp } from '../../actions/rsvp_actions';
-// import EventIndexItem from './event_index_item';
 // import Modal from '../modal'
 
 class EventShow extends React.Component {
