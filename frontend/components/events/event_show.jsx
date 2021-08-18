@@ -13,7 +13,6 @@ class EventShow extends React.Component {
         this.createRsvp = this.createRsvp.bind(this)
         this.deleteRsvp = this.deleteRsvp.bind(this)
         this.handleDelete = this.handleDelete.bind(this)
-        // this.handleEdit = this.handleEdit.bind(this)
     }
 
     componentDidMount() {
@@ -29,10 +28,8 @@ class EventShow extends React.Component {
 
     showRSVP() {
         let rsvps = Object.values(this.props.eventRSVPs)
-        // let exists = false
         for(let i = 0; i<rsvps.length; i++) {
             if (rsvps[i].event_id == this.props.event.id) {
-                // exists = true;
                  return <button onClick={this.deleteRsvp} className="rsvp-button">Delete RSVP</button>
             } 
         }
@@ -113,9 +110,7 @@ class EventShow extends React.Component {
                         </div>
                     </div>
                     <div className="event-show-mid">
-                        {/* {this.props.currentUser == this.props.event.author_id ? <button onClick={this.props.deleteEvent(this.props.event.id)} className="rsvp-button">Delete Event</button> : ""} */}
                         {this.showDeleteEvent()}
-                        {/* <button onClick={this.handleRsvp} className="rsvp-button">RSVP</button> */}
                         {this.showRSVP()}
                         {this.showEdit()}
                     </div>
