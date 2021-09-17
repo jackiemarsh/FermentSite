@@ -5,5 +5,4 @@ const LoadingIcon = () => (
     <div className="loader"></div>
   </div>
 );
-
 export default LoadingIcon;
