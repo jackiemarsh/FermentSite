@@ -6,7 +6,7 @@ import LogInFormContainer from './session/login_form_container';
 import {AuthRoute, ProtectedRoute} from '.././util/route_util'
 import NavBarContainer from './nav/nav_container'
 import UserProfileContainer from './users/user_profile_container'
-import EventIndexContainer from './events/events_index_container'
+import EventIndexContainer from './events/event_index_container'
 import EventShowContainer from './events/event_show_container'
 import CreateEventContainer from './events/create_event_container'
 import EditEventContainer from './events/edit_event_container'

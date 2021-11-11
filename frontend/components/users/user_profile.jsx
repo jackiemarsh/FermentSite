@@ -52,6 +52,7 @@ class UserProfile extends React.Component {
             {/* <div>{this.userDate}</div> */}
             <div className="user-page">
                 <span>Fermentsite account since {this.props.currentUser.created_at}</span>
+                {/* .toDateString() */}
                 <h1 className="page-header">Account Information</h1>
             </div>
                 <div className="profile-box">
