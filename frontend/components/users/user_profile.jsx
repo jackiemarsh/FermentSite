@@ -8,7 +8,6 @@ class UserProfile extends React.Component {
             super(props)
         this.filterEvents = this.filterEvents.bind(this);
         this.userImage = this.userImage.bind(this);
-        this.userDate = this.userDate.bind(this)
 
         this.state = {loading: true};
         }
@@ -18,8 +17,6 @@ class UserProfile extends React.Component {
         this.props.fetchEvents();
         this.props.fetchUser(this.props.match.params.userId)
             .then(() => this.setState({ loading: false}));
-
-        // this.setState({ loading: false });
     }
     
   
@@ -37,19 +34,11 @@ class UserProfile extends React.Component {
     userImage() {
         return this.props.currentUser.imageUrl != undefined ? <img src={this.props.currentUser.imageUrl} alt="event pic" className="event-show-img"/> : <div className="event-show-img"></div>
     }
-
-    userDate() {
-        return this.props.currentUser.created_at != undefined ? <span>Fermentsite account since {new Date(this.props.currentUser.created_at).toDateString()}</span> : null
-    }
-
     
     
     render() {
-        const createdAtDate = this.props.currentUser.created_at
-        console.log({ createdAtDate })
-
+    
         const date = new Date(this.props.currentUser.created_at);
-        // const fullDate = date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear();
         const fullDate = date.toLocaleString('default', { month: 'short' }) + " " + date.getDate() + ", " + date.getFullYear();
 
         if (this.props.currentUser === undefined) return null;
@@ -58,11 +47,8 @@ class UserProfile extends React.Component {
         } else {
         return(
             <div className="user-container">
-            {/* <div>{this.userDate}</div> */}
             <div className="user-page">
-                {/* <span>Fermentsite account since {this.props.currentUser.created_at}</span> */}
                 <span>Fermentsite account since {fullDate}</span>
-                {/* {this.userDate()} */}
                 <h1 className="page-header">Account Information</h1>
             </div>
                 <div className="profile-box">
