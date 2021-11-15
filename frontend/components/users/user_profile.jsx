@@ -49,7 +49,8 @@ class UserProfile extends React.Component {
         console.log({ createdAtDate })
 
         const date = new Date(this.props.currentUser.created_at);
-        const fullDate = date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear();
+        // const fullDate = date.getMonth() + "/" + date.getDate() + "/" + date.getFullYear();
+        const fullDate = date.toLocaleString('default', { month: 'short' }) + " " + date.getDate() + ", " + date.getFullYear();
 
         if (this.props.currentUser === undefined) return null;
         if (this.state.loading) {
