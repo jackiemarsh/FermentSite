@@ -44,5 +44,6 @@
     "babel-loader": "^8.2.3",
     "redux-logger": "^3.0.6",
     "webpack": "^5.62.1"
-  }
+  },
+  "heroku-run-build-script": true
 }
