@@ -66,7 +66,9 @@ class UserProfile extends React.Component {
                     </div>
                 </div>
 
-
+                <div className="user-create-button-container">
+                    <Link to="/event/create" className="button-submit">Create Event</Link>
+                </div>
                 <div className="events-attending">
                     <h2 className="feed-header">Events coming up</h2>
                     <ul className="event-feed" className="rsvp-feed">
@@ -75,9 +77,9 @@ class UserProfile extends React.Component {
                         ))}
                     </ul>
                 </div>
-                <div className="user-create-button-container">
+                {/* <div className="user-create-button-container">
                     <Link to="/event/create" className="button-submit">Create Event</Link>
-                </div>
+                </div> */}
                 <div className="events-created">
                     <h2 className="feed-header">Manage Your Events</h2>
                     <ul className="events-created-feed">
