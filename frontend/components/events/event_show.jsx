@@ -89,8 +89,13 @@ class EventShow extends React.Component {
     }
 
     render() {
+        
         if (this.state.loading) return null;
         if (this.props.event === undefined) return null;
+        
+        const date = new Date(this.props.event.start_date);
+        const fullDate = date.toLocaleString('default', { month: 'short' }) + " " + date.getDate() + ", " + date.getFullYear();
+        
         return (
             <div className="event-show-container">
                 <section className="event-show">
@@ -101,7 +106,7 @@ class EventShow extends React.Component {
                         {/* </figure> */}
                         </div>
                         <div className="top-side">
-                            <h4 className="event-show-date">{this.props.event.start_date}</h4>
+                            <h4 className="event-show-date">{fullDate}</h4>
                             <h2 className="event-show-title">{this.props.event.title}</h2>
                             <h3 className="event-show-author">by {this.props.event.author}</h3>
                         </div>
