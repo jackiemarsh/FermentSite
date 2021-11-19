@@ -3,13 +3,14 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    height: 150vh;
 }
 
 .event-show {
     margin: 0 100px 0 100px;
     box-sizing: border-box;
     width: 600px;
-    // height: 700px;
+    height: 100%;
 }
 
 .event-show-top {
@@ -27,13 +28,14 @@
     // max-height: 500px;
     // margin: 30px;
     // background-size: contain;
-    background-color: rgba(245, 243, 243, 0.89);
+    background-color: rgba(179, 174, 174, 0.89);
     // width: 400px;
     max-height: 480px;
     max-width: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .event-show-image {
@@ -92,7 +94,7 @@
     display: flex;
     // flex-direction: column;
     // justify-content: space-between;
-    height: 800px;
+    height: fit-content;
     border-top: solid rgb(180, 180, 185) 1px;
     padding: 50px 30px 30px 30px;
     box-sizing: border-box;
