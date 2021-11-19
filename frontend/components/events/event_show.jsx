@@ -77,9 +77,9 @@ class EventShow extends React.Component {
     // }
 
     showEdit() {
-        let userId = this.props.currentUser;
-        let ownerId = this.props.event.author_id;
-        if (userId === ownerId) {
+        // let userId = this.props.currentUser;
+        // let ownerId = this.props.event.author_id;
+        if (this.props.currentUser == this.props.event.author_id) {
             return (
                 <Link to={`/events/${this.props.event.id}/edit`} className="rsvp-button-container">
                     <button className="rsvp-button">Edit Event</button>
@@ -112,9 +112,9 @@ class EventShow extends React.Component {
                         </div>
                     </div>
                     <div className="event-show-mid">
-                        {this.showDeleteEvent()}
                         {this.showRSVP()}
                         {this.showEdit()}
+                        {this.showDeleteEvent()}
                     </div>
                     <div className="event-show-bottom">
                        <div className="bottom-left">
