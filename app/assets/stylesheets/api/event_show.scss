@@ -26,10 +26,7 @@
 
 .top-img {
     // margin: 30px;
-    // background-size: contain;
     background-color: rgba(179, 174, 174, 0.89);
-    // max-height: 480px;
-    // max-width: 400px;
     height: 40vh;
     display: flex;
     justify-content: center;
@@ -39,9 +36,10 @@
 
 .event-show-image {
     height: 100%;
-    // max-height: 480px;
-    // max-width: 400px;
-    object-fit: cover;
+    width: 100%;
+    object-fit: contain;
+    max-width: 400px;
+    max-height: 40vh;
 }
 
 .top-side {
