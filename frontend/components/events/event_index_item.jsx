@@ -9,6 +9,9 @@ class EventIndexItem extends React.Component{
   
   render() {
 
+    const date = new Date(this.props.event.start_date);
+    const fullDate = date.toLocaleString('default', { month: 'short' }) + " " + date.getDate() + ", " + date.getFullYear();
+        
     return(
       <li className="list-item">
         <Link className="event-item" to={`/events/${this.props.event.id}`}>
@@ -17,7 +20,7 @@ class EventIndexItem extends React.Component{
             <span className="event-item-title">{this.props.event.title}</span>
             <span className="event-item-description">{this.props.event.description}</span>
             <span className="event-item-location">{this.props.event.location}</span>
-            <span className="event-item-date">{this.props.event.start_date}</span>
+            <span className="event-item-date">{fullDate}</span>
           </div>
         </Link>
       </li>

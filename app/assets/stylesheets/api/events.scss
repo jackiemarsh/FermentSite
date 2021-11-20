@@ -276,4 +276,11 @@
 // }
 .event-item-description {
     overflow: hidden;
+    margin-bottom: 6px;
+}
+
+.event-item-title {
+    align-self: center;
+    font-weight: bold;
+    font-size: 1.2rem
 }
