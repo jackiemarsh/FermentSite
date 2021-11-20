@@ -55,11 +55,11 @@
 //     flex-direction: column;
 // }
 
-.event-show-img {
+.user-show-img {
     border: 1px solid darkslategray; 
-    min-height: 200px;
-    min-width: 100px;
-    max-width: 200px;
+    height: 200px;
+    width: auto;
+    object-fit: contain;
 }
 
 .account-header {

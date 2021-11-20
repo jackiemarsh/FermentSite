@@ -32,7 +32,7 @@ class UserProfile extends React.Component {
     }
 
     userImage() {
-        return this.props.currentUser.imageUrl != undefined ? <img src={this.props.currentUser.imageUrl} alt="event pic" className="event-show-img"/> : <div className="event-show-img"></div>
+        return this.props.currentUser.imageUrl != undefined ? <img src={this.props.currentUser.imageUrl} alt="event pic" className="user-show-img"/> : <div className="event-show-img"></div>
     }
     
     
